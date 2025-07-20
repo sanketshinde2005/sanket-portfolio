@@ -67,7 +67,6 @@ postcss.config.js    # PostCSS configuration
 ## Customization
 
 - **Update content:** Edit `src/app/page.tsx` for your details, skills, projects, etc.
-- **Change profile photo:** Replace `public/me.jpg` with your own image.
 - **Modify styles:** Edit `globals.css` or extend Tailwind in `tailwind.config.js`.
 
 ## Deployment
