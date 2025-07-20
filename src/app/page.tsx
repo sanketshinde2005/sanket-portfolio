@@ -955,9 +955,9 @@ export default function HomePage() {
                       <span className="text-sm">2024 - Present</span>
                     </div>
                     <p className="text-gray-300 text-sm leading-relaxed">
-                      Reprensting my class in college commites meet and sharing
-                      valuable coordinations with technincal staff for well
-                      being of class.
+                      Representing my class in college committee meet and
+                      sharing valuable coordinations with technincal staff for
+                      well being of class.
                     </p>
                   </div>
                 </div>
