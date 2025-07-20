@@ -60,8 +60,6 @@ src/
     globals.css      # Global styles (Tailwind + custom)
   components/
     navbar.tsx       # Responsive navigation bar
-public/
-  me.jpg             # Your profile photo
 tailwind.config.js   # Tailwind configuration
 postcss.config.js    # PostCSS configuration
 ```
