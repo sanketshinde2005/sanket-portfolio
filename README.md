@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sanket Shinde - Portfolio
+
+A modern, responsive personal portfolio website built with **Next.js** and **Tailwind CSS**.  
+Showcases education, experience, skills, projects, certificates, achievements, and extra-curricular activities.
+
+## Features
+
+- **Responsive Design:** Works seamlessly on mobile, tablet, and desktop.
+- **Hero Section:** Name, animated intro, contact info, social links, and profile photo.
+- **Education & Experience:** Timeline and highlights.
+- **Skills & Technologies:** Categorized skill badges.
+- **Projects:** Detailed cards with features, tech stack, and links.
+- **Certificates & Achievements:** Professional certifications and hackathon wins.
+- **Extra-Curricular:** Leadership roles, activities, and summary stats.
+- **Dark Theme:** Stylish dark UI with smooth transitions.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js (v18+ recommended)
+- npm
+
+### Installation
+
+1. **Clone the repository:**
+   ```
+   git clone https://github.com/sanketshinde2005/sanket-portfolio.git
+   cd sanket-portfolio
+   ```
+
+2. **Install dependencies:**
+   ```
+   npm install
+   ```
+
+3. **Add your profile photo:**
+   - Place your photo (e.g., `me.jpg`) in the `public` folder.
+
+4. **Run the development server:**
+   ```
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Build for Production
+
+```
+npm run build
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/
+  app/
+    page.tsx         # Main homepage and sections
+    layout.tsx       # Root layout and navbar
+    globals.css      # Global styles (Tailwind + custom)
+  components/
+    navbar.tsx       # Responsive navigation bar
+public/
+  me.jpg             # Your profile photo
+tailwind.config.js   # Tailwind configuration
+postcss.config.js    # PostCSS configuration
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Customization
 
-## Learn More
+- **Update content:** Edit `src/app/page.tsx` for your details, skills, projects, etc.
+- **Change profile photo:** Replace `public/me.jpg` with your own image.
+- **Modify styles:** Edit `globals.css` or extend Tailwind in `tailwind.config.js`.
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+You can deploy this project to [Vercel](https://vercel.com/) or any platform supporting Next.js.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
+This project is for personal use and inspiration.  
+Feel free to fork and customize!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Made with ❤️ by
