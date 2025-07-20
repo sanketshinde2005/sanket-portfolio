@@ -83,4 +83,4 @@ Feel free to fork and customize!
 
 ---
 
-**Made with ❤️ by
+**Made with ❤️ by Sanket Shinde**
