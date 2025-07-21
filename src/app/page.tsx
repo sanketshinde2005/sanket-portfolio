@@ -48,10 +48,21 @@ export default function HomePage() {
       ],
     },
     {
-      title: "Frameworks & Libraries",
+      title: "Frameworks, Libraries & Platforms",
       icon: <Code className="w-6 h-6" />,
       color: "purple",
-      skills: ["React", "Next.js", "Node.js", "Express.js", "Refine", "Flask"],
+      skills: [
+        "React",
+        "Next.js",
+        "Node.js",
+        "Express.js",
+        "Refine",
+        "Flask",
+        "Ant Design",
+        "Tailwind CSS",
+        "Linux",
+        "Unix",
+      ],
     },
     {
       title: "Databases & Tools",
@@ -71,6 +82,8 @@ export default function HomePage() {
         "NumPy",
         "Matplotlib",
         "OpenCV",
+        "NLP",
+        "PCA & LDA",
       ],
     },
     {
@@ -257,17 +270,17 @@ export default function HomePage() {
       {/* Hero Section */}
       <section
         id="home"
-        className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900/20 to-gray-900 flex items-center"
+        className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900/20 to-gray-900 flex items-center justify-center"
       >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 text-center py-20">
           <div className="mb-8">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-4 animate-fade-in">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-4 animate-fade-in">
               Sanket Shinde
             </h1>
-            <p className="text-xl sm:text-2xl text-blue-400 font-medium mb-6 animate-fade-in-delay-1">
+            <p className="text-lg sm:text-2xl text-blue-400 font-medium mb-6 animate-fade-in-delay-1">
               Software Engineering Student
             </p>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed animate-fade-in-delay-2">
+            <p className="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed animate-fade-in-delay-2">
               Hello everyone, I am Sanket Shinde. I am an Engineering
               Undergraduate specializing in Information Technology at Pune
               Institute of Computer Technology. A strong academic performer,
@@ -281,9 +294,8 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Contact Information */}
           <div className="mb-12 animate-fade-in-delay-3">
-            <div className="flex flex-wrap justify-center gap-6 mb-8">
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 sm:gap-6 mb-8">
               <div className="flex items-center gap-2 text-gray-300">
                 <Phone className="w-5 h-5 text-blue-400" />
                 <span>+91 9156857062</span>
@@ -298,8 +310,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Social Links */}
-            <div className="flex justify-center gap-6">
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
               <a
                 href="https://www.linkedin.com/in/sanket-shinde-067650288/"
                 target="_blank"
@@ -333,23 +344,23 @@ export default function HomePage() {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-20 bg-gray-800/50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+      <section id="education" className="py-16 sm:py-20 bg-gray-800/50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
               Education
             </h2>
-            <p className="text-xl text-gray-400">
-              Academic journey and achievements
+            <p className="text-lg sm:text-xl text-gray-400">
+              My academic journey and achievements.
             </p>
           </div>
 
-          <div className="bg-gray-800 rounded-2xl shadow-xl p-8 sm:p-12 hover:shadow-2xl transition-shadow duration-300 border border-gray-700">
-            <div className="flex items-start gap-6 mb-8">
-              <div className="bg-blue-500/20 p-4 rounded-full border border-blue-500/30">
+          <div className="bg-gray-800 rounded-2xl shadow-xl p-6 sm:p-8 lg:p-12 hover:shadow-2xl transition-shadow duration-300 border border-gray-700">
+            <div className="flex flex-col sm:flex-row items-start gap-6 sm:gap-8">
+              <div className="bg-blue-500/20 p-4 rounded-full border border-blue-500/30 mx-auto sm:mx-0">
                 <GraduationCap className="w-8 h-8 text-blue-400" />
               </div>
-              <div className="flex-1">
+              <div className="flex-1 w-full">
                 <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
                   Bachelor of Engineering (IT)
                 </h3>
@@ -359,8 +370,7 @@ export default function HomePage() {
                 <p className="text-lg text-gray-300 mb-4">
                   Pune Institute of Computer Technology (PICT)
                 </p>
-
-                <div className="flex flex-wrap gap-6 mb-6">
+                <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 mb-6">
                   <div className="flex items-center gap-2">
                     <Calendar className="w-5 h-5 text-gray-400" />
                     <span className="text-gray-300">2023 - Present</span>
@@ -372,8 +382,7 @@ export default function HomePage() {
                     </span>
                   </div>
                 </div>
-
-                <div className="bg-gray-700/50 rounded-lg p-6 border border-gray-600">
+                <div className="bg-gray-700/50 rounded-lg p-4 sm:p-6 border border-gray-600">
                   <h5 className="font-semibold text-white mb-3">
                     Key Coursework
                   </h5>
@@ -389,8 +398,10 @@ export default function HomePage() {
                       "Cloud Computing",
                     ].map((course) => (
                       <div key={course} className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                        <span className="text-gray-300">{course}</span>
+                        <div className="w-2 h-2 bg-blue-400 rounded-full flex-shrink-0"></div>
+                        <span className="text-gray-300 text-sm sm:text-base">
+                          {course}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -402,35 +413,33 @@ export default function HomePage() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+      <section id="experience" className="py-16 sm:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
               Experience
             </h2>
-            <p className="text-xl text-gray-400">
-              Professional journey and contributions
+            <p className="text-lg sm:text-xl text-gray-400">
+              Professional journey and contributions.
             </p>
           </div>
-
           <div className="space-y-8">
-            {/* Platform Engineering Internship */}
-            <div className="bg-gray-800 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-shadow duration-300 border border-gray-700">
-              <div className="flex items-start gap-6">
-                <div className="bg-blue-500/20 p-4 rounded-full border border-blue-500/30">
+            <div className="bg-gray-800 rounded-2xl shadow-xl p-6 sm:p-8 hover:shadow-2xl transition-shadow duration-300 border border-gray-700">
+              <div className="flex flex-col sm:flex-row items-start gap-6">
+                <div className="bg-blue-500/20 p-4 rounded-full border border-blue-500/30 mx-auto sm:mx-0">
                   <Briefcase className="w-8 h-8 text-blue-400" />
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 w-full">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
                     <div>
-                      <h3 className="text-2xl font-bold text-white mb-1">
+                      <h3 className="text-xl sm:text-2xl font-bold text-white mb-1">
                         Platform Engineering Intern
                       </h3>
-                      <h4 className="text-xl text-blue-400 font-semibold mb-2">
+                      <h4 className="text-lg sm:text-xl text-blue-400 font-semibold mb-2 sm:mb-0">
                         Lightbeam.ai
                       </h4>
                     </div>
-                    <div className="flex flex-col sm:items-end gap-2">
+                    <div className="flex flex-col sm:items-end gap-2 text-sm sm:text-base">
                       <div className="flex items-center gap-2 text-gray-400">
                         <Calendar className="w-4 h-4" />
                         <span>April 2025 - Present</span>
@@ -441,14 +450,13 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-
                   <div className="mb-6">
                     <h5 className="font-semibold text-white mb-3">
                       Key Contributions:
                     </h5>
                     <ul className="space-y-3">
                       {[
-                        "Developed and maintained CI/CD pipelines using Jenkins and GitLab CI, reducing deployment time by 20%",
+                        "Developed & maintained CI/CD pipelines using Jenkins & GitLab CI, reducing deployment time by 20%",
                         "Implemented infrastructure as code using Terraform and GKE for AWS cloud resources",
                         "Containerized applications using Docker and orchestrated with Kubernetes, improving scalability",
                         "Set up monitoring and managment systems using Teleport for resource accessing in environments",
@@ -461,7 +469,6 @@ export default function HomePage() {
                       ))}
                     </ul>
                   </div>
-
                   <div className="flex flex-wrap gap-2">
                     {[
                       "AWS",
@@ -483,27 +490,25 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-
-            {/* Workday Training */}
-            <div className="bg-gray-800 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-shadow duration-300 border border-gray-700">
-              <div className="flex items-start gap-6">
-                <div className="bg-green-500/20 p-4 rounded-full border border-green-500/30">
+            <div className="bg-gray-800 rounded-2xl shadow-xl p-6 sm:p-8 hover:shadow-2xl transition-shadow duration-300 border border-gray-700">
+              <div className="flex flex-col sm:flex-row items-start gap-6">
+                <div className="bg-green-500/20 p-4 rounded-full border border-green-500/30 mx-auto sm:mx-0">
                   <Briefcase className="w-8 h-8 text-green-400" />
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 w-full">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
                     <div>
-                      <h3 className="text-2xl font-bold text-white mb-1">
+                      <h3 className="text-xl sm:text-2xl font-bold text-white mb-1">
                         Workday HCM + VNDLY Training
                       </h3>
-                      <h4 className="text-xl text-green-400 font-semibold mb-2">
+                      <h4 className="text-lg sm:text-xl text-green-400 font-semibold mb-2 sm:mb-0">
                         Lightbeam.ai
                       </h4>
                     </div>
-                    <div className="flex flex-col sm:items-end gap-2">
+                    <div className="flex flex-col sm:items-end gap-2 text-sm sm:text-base">
                       <div className="flex items-center gap-2 text-gray-400">
                         <Calendar className="w-4 h-4" />
-                        <span>March 2024 - May 2024</span>
+                        <span>May 2025</span>
                       </div>
                       <div className="flex items-center gap-2 text-gray-400">
                         <MapPin className="w-4 h-4" />
@@ -511,14 +516,13 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-
                   <div className="mb-6">
                     <h5 className="font-semibold text-white mb-3">
                       Training Highlights:
                     </h5>
                     <ul className="space-y-3">
                       {[
-                        "Completed comprehensive training on Workday HCM modules including Core HCM, Recruiting, and Talent Management",
+                        "Completed comprehensive training on Workday HCM modules including Core HCM, Recruiting, etc.",
                         "Gained expertise in VNDLY (Vendor Management System) for contingent workforce management",
                         "Learned integration patterns between Workday and third-party systems using APIs and web services",
                         "Developed skills in report building, calculated fields, and business process configuration",
@@ -530,7 +534,6 @@ export default function HomePage() {
                       ))}
                     </ul>
                   </div>
-
                   <div className="flex flex-wrap gap-2">
                     {[
                       "Workday HCM",
@@ -555,22 +558,21 @@ export default function HomePage() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 bg-gray-800/50">
+      <section id="skills" className="py-16 sm:py-20 bg-gray-800/50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
               Skills & Technologies
             </h2>
-            <p className="text-xl text-gray-400">
-              Technical expertise and proficiencies
+            <p className="text-lg sm:text-xl text-gray-400">
+              My technical expertise and proficiencies.
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {skillCategories.map((category, index) => (
               <div
                 key={category.title}
-                className="bg-gray-800 rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-700"
+                className="bg-gray-800 rounded-2xl shadow-xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-700"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="flex items-center gap-4 mb-6">
@@ -581,11 +583,10 @@ export default function HomePage() {
                   >
                     {category.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-white">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white">
                     {category.title}
                   </h3>
                 </div>
-
                 <div className="flex flex-wrap gap-3">
                   {category.skills.map((skill) => (
                     <span
@@ -605,17 +606,16 @@ export default function HomePage() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20">
+      <section id="projects" className="py-16 sm:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
               Projects
             </h2>
-            <p className="text-xl text-gray-400">
-              Showcasing innovative solutions and technical expertise
+            <p className="text-lg sm:text-xl text-gray-400">
+              Showcasing innovative solutions and technical expertise.
             </p>
           </div>
-
           <div className="space-y-12">
             {projects.map((project, index) => (
               <div
@@ -623,91 +623,67 @@ export default function HomePage() {
                 className="bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-700"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className="p-8 sm:p-12">
-                  <div className="flex flex-col lg:flex-row gap-8">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-4 mb-4">
-                        <h3 className="text-3xl font-bold text-blue-400">
-                          {project.title}
-                        </h3>
-                        <div className="flex gap-3">
-                          <a
-                            href={project.githubUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors"
-                          >
-                            <Github className="w-5 h-5 text-gray-300" />
-                          </a>
-                          <a
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors"
-                          >
-                            <ExternalLink className="w-5 h-5 text-gray-300" />
-                          </a>
-                        </div>
-                      </div>
-
-                      <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                        {project.description}
-                      </p>
-
-                      <div className="mb-6">
-                        <h4 className="font-semibold text-white mb-3">
-                          Key Features:
-                        </h4>
-                        <ul className="space-y-2">
-                          {project.features.map((feature, featureIndex) => (
-                            <li
-                              key={featureIndex}
-                              className="flex items-start gap-3"
-                            >
-                              <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                              <span className="text-gray-300">{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="mb-8">
-                        <h4 className="font-semibold text-white mb-3">
-                          Tech Stack:
-                        </h4>
-                        <div className="flex flex-wrap gap-2">
-                          {project.techStack.map((tech) => (
-                            <span
-                              key={tech}
-                              className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm font-medium border border-blue-500/30"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="flex flex-wrap gap-4">
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+                <div className="p-6 sm:p-8 lg:p-12">
+                  <div className="flex items-center gap-4 mb-4">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-blue-400">
+                      {project.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-6">
+                    {project.description}
+                  </p>
+                  <div className="mb-6">
+                    <h4 className="font-semibold text-white mb-3">
+                      Key Features:
+                    </h4>
+                    <ul className="space-y-2">
+                      {project.features.map((feature, featureIndex) => (
+                        <li
+                          key={featureIndex}
+                          className="flex items-start gap-3"
                         >
-                          <Github className="w-5 h-5" />
-                          <span>View Code</span>
-                        </a>
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 bg-gray-700 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-all duration-300 hover:scale-105 shadow-lg"
+                          <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-gray-300">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="mb-8">
+                    <h4 className="font-semibold text-white mb-3">
+                      Tech Stack:
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.techStack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm font-medium border border-blue-500/30"
                         >
-                          <ExternalLink className="w-5 h-5" />
-                          <span>Live Demo</span>
-                        </a>
-                      </div>
+                          {tech}
+                        </span>
+                      ))}
                     </div>
+                  </div>
+                  <div className="flex flex-wrap gap-4">
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+                    >
+                      <Github className="w-5 h-5" />
+                      <span>View Code</span>
+                    </a>
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 bg-gray-700 text-white px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg hover:bg-gray-600 transition-all duration-300 hover:scale-105 shadow-lg"
+                      >
+                        <ExternalLink className="w-5 h-5" />
+                        <span>Live Demo</span>
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -717,17 +693,16 @@ export default function HomePage() {
       </section>
 
       {/* Certificates Section */}
-      <section id="certificates" className="py-20 bg-gray-800/50">
+      <section id="certificates" className="py-16 sm:py-20 bg-gray-800/50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
               Certificates
             </h2>
-            <p className="text-xl text-gray-400">
-              Professional certifications and achievements
+            <p className="text-lg sm:text-xl text-gray-400">
+              Professional certifications and achievements.
             </p>
           </div>
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {certificates.map((cert, index) => (
               <div
@@ -735,29 +710,27 @@ export default function HomePage() {
                 className="bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-700"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className="p-8">
+                <div className="p-6 sm:p-8">
                   <div className="flex items-start gap-6 mb-6">
                     <div className="bg-blue-500/20 p-4 rounded-full border border-blue-500/30 flex-shrink-0">
                       <Award className="w-8 h-8 text-blue-400" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-white mb-2">
+                      <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
                         {cert.title}
                       </h3>
-                      <p className="text-lg font-semibold text-blue-400 mb-1">
+                      <p className="text-base sm:text-lg font-semibold text-blue-400 mb-1">
                         {cert.issuer}
                       </p>
-                      <div className="flex items-center gap-2 text-gray-400 mb-4">
+                      <div className="flex items-center gap-2 text-gray-400 mb-4 text-sm sm:text-base">
                         <Calendar className="w-4 h-4" />
                         <span>{cert.date}</span>
                       </div>
                     </div>
                   </div>
-
                   <p className="text-gray-300 leading-relaxed mb-6">
                     {cert.description}
                   </p>
-
                   <div className="mb-6">
                     <h4 className="font-semibold text-white mb-3">
                       Skills Validated:
@@ -773,12 +746,11 @@ export default function HomePage() {
                       ))}
                     </div>
                   </div>
-
                   <div className="border-t border-gray-700 pt-6">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                       <div>
                         <p className="text-sm text-gray-400">Credential ID:</p>
-                        <p className="font-mono text-sm text-gray-300">
+                        <p className="font-mono text-xs sm:text-sm text-gray-300">
                           {cert.credentialId}
                         </p>
                       </div>
@@ -786,10 +758,10 @@ export default function HomePage() {
                         href={cert.certificateUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+                        className="flex-shrink-0 flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
                       >
                         <ExternalLink className="w-5 h-5" />
-                        <span>Verify Certificate</span>
+                        <span>Verify</span>
                       </a>
                     </div>
                   </div>
@@ -801,17 +773,16 @@ export default function HomePage() {
       </section>
 
       {/* Achievements Section */}
-      <section id="achievements" className="py-20">
+      <section id="achievements" className="py-16 sm:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
               Achievements
             </h2>
-            <p className="text-xl text-gray-400">
-              Hackathon wins, awards, and recognitions
+            <p className="text-lg sm:text-xl text-gray-400">
+              Hackathon wins, awards, and recognitions.
             </p>
           </div>
-
           <div className="space-y-8">
             {hackathons.map((hackathon, index) => (
               <div
@@ -819,15 +790,15 @@ export default function HomePage() {
                 className="bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-700"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className="p-8">
-                  <div className="flex items-start gap-6 mb-6">
-                    <div className="bg-yellow-500/20 p-4 rounded-full border border-yellow-500/30 flex-shrink-0">
+                <div className="p-6 sm:p-8">
+                  <div className="flex flex-col sm:flex-row items-start gap-6 mb-6">
+                    <div className="bg-yellow-500/20 p-4 rounded-full border border-yellow-500/30 flex-shrink-0 mx-auto sm:mx-0">
                       <Trophy className="w-8 h-8 text-yellow-400" />
                     </div>
-                    <div className="flex-1">
+                    <div className="flex-1 w-full">
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                        <div>
-                          <h3 className="text-2xl font-bold text-white mb-2">
+                        <div className="mb-4 sm:mb-0">
+                          <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
                             {hackathon.title}
                           </h3>
                           <p className="text-lg font-semibold text-yellow-400 mb-1">
@@ -835,55 +806,34 @@ export default function HomePage() {
                           </p>
                           <p className="text-gray-400">{hackathon.category}</p>
                         </div>
-                        <div className="text-right">
+                        <div className="text-left sm:text-right">
                           <div className="flex items-center gap-2 text-gray-400 mb-2">
                             <Calendar className="w-4 h-4" />
                             <span>{hackathon.date}</span>
                           </div>
-                          <div className="text-2xl font-bold text-yellow-400">
+                          <div className="text-xl sm:text-2xl font-bold text-yellow-400">
                             {hackathon.prize}
                           </div>
                         </div>
                       </div>
-
                       <p className="text-gray-300 leading-relaxed mb-6">
                         {hackathon.description}
                       </p>
-
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-                        <div>
-                          <div className="flex items-center gap-2 mb-2">
-                            <Users className="w-5 h-5 text-gray-400" />
-                            <span className="font-semibold text-white">
-                              Team Size:
-                            </span>
-                          </div>
-                          <p className="text-gray-300">
-                            {hackathon.teamSize} members
-                          </p>
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-white mb-2">
-                            Technologies Used:
-                          </h4>
-                          <div className="flex flex-wrap gap-2">
-                            {hackathon.technologies.map((tech) => (
-                              <span
-                                key={tech}
-                                className="bg-gray-700 text-gray-300 px-2 py-1 rounded text-sm"
-                              >
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {hackathon.technologies.map((tech) => (
+                          <span
+                            key={tech}
+                            className="bg-gray-700 text-gray-300 px-2 py-1 rounded text-sm"
+                          >
+                            {tech}
+                          </span>
+                        ))}
                       </div>
-
                       <a
                         href={hackathon.certificateUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+                        className="inline-flex items-center gap-2 bg-yellow-600 hover:bg-yellow-700 text-white px-5 py-2.5 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
                       >
                         <ExternalLink className="w-5 h-5" />
                         <span>View Certificate</span>
@@ -898,156 +848,117 @@ export default function HomePage() {
       </section>
 
       {/* Extra-Curricular Section */}
-      <section id="extra-curricular" className="py-20 bg-gray-800/50">
+      <section id="extra-curricular" className="py-16 sm:py-20 bg-gray-800/50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
               Extra-Curricular Activities
             </h2>
-            <p className="text-xl text-gray-400">
-              Leadership, sports, competitions, and community involvement
+            <p className="text-lg sm:text-xl text-gray-400">
+              Leadership, competitions, and community involvement.
             </p>
           </div>
-
-          {/* Leadership Roles */}
-          <div className="mb-16">
-            <h3 className="text-3xl font-bold text-white mb-8 flex items-center gap-3">
-              <Users className="w-8 h-8 text-blue-400" />
-              Leadership Roles
-            </h3>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-700">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {[
+              {
+                icon: "📢",
+                title: "Public Relations Lead",
+                org: "PICT Robotics",
+                date: "December 2024 - Present",
+                desc: "Leading PR initiatives, managing social media, and coordinating sponsorships.",
+              },
+              {
+                icon: "🧑‍🎓 ",
+                title: "Class Representative",
+                org: "IT Department",
+                date: "July 2024 - Present",
+                desc: "Representing my class and coordinating with faculty for the well-being of students.",
+              },
+              {
+                icon: "🧩",
+                title: "AIR 3 - Crossword Competition",
+                org: "National Championship",
+                date: "March 2021",
+                desc: "Achieved 3rd position nationally, demonstrating strong vocabulary and problem-solving skills.",
+              },
+              {
+                icon: "❤️",
+                title: "Community Volunteer",
+                org: "Multiple Organizations",
+                date: "2023 - Present",
+                desc: "Active volunteer in drives for various social and noble causes.",
+              },
+            ].map((activity) => (
+              <div
+                key={activity.title}
+                className="bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-700"
+              >
                 <div className="flex items-start gap-4">
-                  <div className="text-3xl">📢</div>
+                  <div className="text-3xl">{activity.icon}</div>
                   <div className="flex-1">
                     <h4 className="text-xl font-bold text-white mb-1">
-                      Public Relations Lead
+                      {activity.title}
                     </h4>
                     <p className="text-blue-400 font-semibold mb-2">
-                      PICT Robotics
+                      {activity.org}
                     </p>
                     <div className="flex items-center gap-2 text-gray-400 mb-4">
                       <Calendar className="w-4 h-4" />
-                      <span className="text-sm">December 2024 - Present</span>
+                      <span className="text-sm">{activity.date}</span>
                     </div>
                     <p className="text-gray-300 text-sm leading-relaxed">
-                      Leading PR initiatives, managing social media presence,
-                      and coordinating with external organizations for
-                      sponsorships and collaborations.
+                      {activity.desc}
                     </p>
                   </div>
                 </div>
               </div>
-
-              <div className="bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-700">
-                <div className="flex items-start gap-4">
-                  <div className="text-3xl">🏏</div>
-                  <div className="flex-1">
-                    <h4 className="text-xl font-bold text-white mb-1">
-                      Class Representative
-                    </h4>
-                    <p className="text-green-400 font-semibold mb-2">
-                      Information Technology Department
-                    </p>
-                    <div className="flex items-center gap-2 text-gray-400 mb-4">
-                      <Calendar className="w-4 h-4" />
-                      <span className="text-sm">2024 - Present</span>
-                    </div>
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      Representing my class in college committee meet and
-                      sharing valuable coordinations with technincal staff for
-                      well being of class.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-700">
-                <div className="flex items-start gap-4">
-                  <div className="text-3xl">🧩</div>
-                  <div className="flex-1">
-                    <h4 className="text-xl font-bold text-white mb-1">
-                      AIR 3 - Crossword Competition
-                    </h4>
-                    <p className="text-yellow-400 font-semibold mb-2">
-                      National Championship
-                    </p>
-                    <div className="flex items-center gap-2 text-gray-400 mb-4">
-                      <Calendar className="w-4 h-4" />
-                      <span className="text-sm">March 2024</span>
-                    </div>
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      Achieved 3rd position nationally in the annual crossword
-                      competition, demonstrating strong vocabulary and
-                      problem-solving skills.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-700">
-                <div className="flex items-start gap-4">
-                  <div className="text-3xl">❤️</div>
-                  <div className="flex-1">
-                    <h4 className="text-xl font-bold text-white mb-1">
-                      Community Volunteer
-                    </h4>
-                    <p className="text-red-400 font-semibold mb-2">
-                      Multiple Organizations
-                    </p>
-                    <div className="flex items-center gap-2 text-gray-400 mb-4">
-                      <Calendar className="w-4 h-4" />
-                      <span className="text-sm">2023 - Present</span>
-                    </div>
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      Active volunteer in voluntering drives for various needs
-                      and nobel causes.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
-
-          {/* Summary Stats */}
           <div className="bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-700">
             <h3 className="text-2xl font-bold text-white mb-8 text-center">
               Activity Summary
             </h3>
-
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-blue-500/30">
-                  <Users className="w-8 h-8 text-blue-400" />
+              {[
+                {
+                  icon: <Users className="w-8 h-8 text-blue-400" />,
+                  value: "2+",
+                  label: "Leadership Roles",
+                  color: "blue",
+                },
+                {
+                  icon: <Trophy className="w-8 h-8 text-yellow-400" />,
+                  value: "5+",
+                  label: "Prizes Won",
+                  color: "yellow",
+                },
+                {
+                  icon: <Star className="w-8 h-8 text-green-400" />,
+                  value: "3",
+                  label: "Sports Activities",
+                  color: "green",
+                },
+                {
+                  icon: <Heart className="w-8 h-8 text-red-400" />,
+                  value: "25+",
+                  label: "Tech Stacks Explored",
+                  color: "red",
+                },
+              ].map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <div
+                    className={`w-16 h-16 bg-${stat.color}-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-${stat.color}-500/30`}
+                  >
+                    {stat.icon}
+                  </div>
+                  <div className="text-3xl font-bold text-white mb-2">
+                    {stat.value}
+                  </div>
+                  <p className="text-gray-400 text-sm sm:text-base">
+                    {stat.label}
+                  </p>
                 </div>
-                <div className="text-3xl font-bold text-white mb-2">2+</div>
-                <p className="text-gray-400">Leadership Roles</p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 bg-yellow-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-yellow-500/30">
-                  <Trophy className="w-8 h-8 text-yellow-400" />
-                </div>
-                <div className="text-3xl font-bold text-white mb-2">5+</div>
-                <p className="text-gray-400">Prizes Won</p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-green-500/30">
-                  <Star className="w-8 h-8 text-green-400" />
-                </div>
-                <div className="text-3xl font-bold text-white mb-2">3</div>
-                <p className="text-gray-400">Sports Activities</p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-red-500/30">
-                  <Heart className="w-8 h-8 text-red-400" />
-                </div>
-                <div className="text-3xl font-bold text-white mb-2">25+</div>
-                <p className="text-gray-400">Tech Stacks explored</p>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -1055,7 +966,7 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="py-12 bg-gray-900 border-t border-gray-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center gap-6 mb-8">
             <a
               href="https://www.linkedin.com/in/sanket-shinde-067650288/"
