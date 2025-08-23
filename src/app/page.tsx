@@ -196,20 +196,15 @@ export default function HomePage() {
       color: "blue",
     },
     {
-      title: "AWS Cloud Practitioner",
+      title: "Impetus and Concepts 25'",
       issuer: "Amazon Web Services",
-      date: "September 2024",
+      date: "February 2025",
       credentialId: "CLF-C01-2024-09-20",
       description:
-        "Validated overall understanding of the AWS Cloud, including basic global infrastructure, billing, and pricing.",
-      skills: [
-        "AWS Core Services",
-        "Cloud Computing",
-        "Security",
-        "Billing & Pricing",
-        "Support",
-      ],
-      certificateUrl: "https://aws.amazon.com/verification/sanket-shinde-clf",
+        "Participated in PICT's annual techincal flagship event INC, competing in Competative Programming.",
+      skills: ["Data Structures & Algorithms", "C++"],
+      certificateUrl:
+        "https://drive.google.com/file/d/1o0jTa5ZgryEqaBPxkqI9YSwsBiyatZRL/view",
       color: "orange",
     },
   ];
