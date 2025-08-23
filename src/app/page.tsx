@@ -197,7 +197,7 @@ export default function HomePage() {
     },
     {
       title: "Impetus and Concepts 25'",
-      issuer: "Amazon Web Services",
+      issuer: "Pune Institute of Computer Technology",
       date: "February 2025",
       credentialId: "CLF-C01-2024-09-20",
       description:
