@@ -209,7 +209,7 @@ export default function HomePage() {
         "Prompt Engineering",
       ],
       certificateUrl:
-        "https://drive.google.com/drive/u/0/folders/1SGJ69xxIIYUctlvpdlTXfe6UAi32-0zQ",
+        "https://drive.google.com/file/d/1NiasNfFHJSlRJoiVJWIV0FdXucGLsqCa/view?usp=drive_link",
       color: "orange",
     },
   ];
