@@ -196,15 +196,20 @@ export default function HomePage() {
       color: "blue",
     },
     {
-      title: "Impetus and Concepts 25'",
-      issuer: "Pune Institute of Computer Technology",
-      date: "February 2025",
+      title: "Introduction to Generative AI Concepts",
+      issuer: "Microsoft",
+      date: "September 2025",
       credentialId: "CLF-C01-2024-09-20",
       description:
-        "Participated in PICT's annual techincal flagship event INC, competing in Competative Programming.",
-      skills: ["Data Structures & Algorithms", "C++"],
+        "Learned about Generative AI concepts, including large language models (LLMs), small language models (SLMs) & their applications, and ethical considerations.",
+      skills: [
+        "LLM",
+        "SLM",
+        "Generative AI Applications",
+        "Prompt Engineering",
+      ],
       certificateUrl:
-        "https://drive.google.com/file/d/1o0jTa5ZgryEqaBPxkqI9YSwsBiyatZRL/view",
+        "https://drive.google.com/drive/u/0/folders/1SGJ69xxIIYUctlvpdlTXfe6UAi32-0zQ",
       color: "orange",
     },
   ];
