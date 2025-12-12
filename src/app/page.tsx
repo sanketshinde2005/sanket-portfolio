@@ -280,6 +280,9 @@ export default function HomePage() {
             <p className="text-lg sm:text-2xl text-blue-400 font-medium mb-6 animate-fade-in-delay-1">
               Software Engineering Student
             </p>
+            <p className="text-lg sm:text-1xl text-blue-400 font-medium mb-6 animate-fade-in-delay-1">
+              Upcoming Summer&apos;26 Intern @Barclays
+            </p>
             <p className="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed animate-fade-in-delay-2">
               Hello everyone, I am Sanket Shinde. I am an Engineering
               Undergraduate specializing in Information Technology at Pune
