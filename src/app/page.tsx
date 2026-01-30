@@ -174,6 +174,29 @@ export default function HomePage() {
       liveUrl: "https://nexjob-1ioj.onrender.com/",
       color: "purple",
     },
+    {
+      title: "SkillSwap",
+      description:
+        "SkillSwap is a student-driven platform where learners exchange skills, collaborate on real knowledge, and grow together.",
+      techStack: [
+        "Spring Boot",
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "NextAuth.js",
+        "Tailwind CSS",
+      ],
+      features: [
+        "AI-powered job recommendation system",
+        "Advanced search and filtering options",
+        "Applicant tracking system (ATS)",
+        "Real-time notifications",
+        "Company profiles and reviews",
+      ],
+      githubUrl: "https://github.com/sanketshinde2005/SkillSwap",
+      liveUrl: "https://skillswap-sigma-swart.vercel.app/",
+      color: "purple",
+    },
   ];
 
   const certificates = [
