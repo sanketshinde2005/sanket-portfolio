@@ -3,14 +3,141 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Default to Aurora Noir Dark */
+    --bg: #0B0F1A;
+    --surface: #11172A;
+    --card: #0F172A;
+    --text: #E5E7EB;
+    --muted: #9CA3AF;
+    --primary: #5EEAD4;
+    --secondary: #A78BFA;
+    --accent: #F472B6;
+    --border: #1E293B;
+    --shadow: rgba(94, 234, 212, 0.15);
+  }
+
+  /* Aurora Noir - Dark (Default) */
+  [data-theme="aurora"][data-mode="dark"] {
+    --bg: #0B0F1A;
+    --surface: #11172A;
+    --card: #0F172A;
+    --text: #E5E7EB;
+    --muted: #9CA3AF;
+    --primary: #5EEAD4;
+    --secondary: #A78BFA;
+    --accent: #F472B6;
+    --border: #1E293B;
+    --shadow: rgba(94, 234, 212, 0.15);
+  }
+
+  /* Aurora Noir - Light */
+  [data-theme="aurora"][data-mode="light"] {
+    --bg: #F8FAFC;
+    --surface: #FFFFFF;
+    --card: #F1F5F9;
+    --text: #0F172A;
+    --muted: #475569;
+    --primary: #0EA5E9;
+    --secondary: #7C3AED;
+    --accent: #EC4899;
+    --border: #E2E8F0;
+    --shadow: rgba(14, 165, 233, 0.15);
+  }
+
+  /* Royal Obsidian - Dark */
+  [data-theme="royal"][data-mode="dark"] {
+    --bg: #0A0A0A;
+    --surface: #141414;
+    --card: #1C1917;
+    --text: #FAFAFA;
+    --muted: #A1A1AA;
+    --primary: #D4AF37;
+    --secondary: #1E40AF;
+    --accent: #991B1B;
+    --border: #27272A;
+    --shadow: rgba(212, 175, 55, 0.18);
+  }
+
+  /* Royal Obsidian - Light */
+  [data-theme="royal"][data-mode="light"] {
+    --bg: #FFFDF7;
+    --surface: #FFFFFF;
+    --card: #FAF7F2;
+    --text: #1C1917;
+    --muted: #57534E;
+    --primary: #B8962E;
+    --secondary: #1E3A8A;
+    --accent: #9F1239;
+    --border: #E7E5E4;
+    --shadow: rgba(184, 150, 46, 0.18);
+  }
+
+  /* Original Theme (Professional) - Dark */
+  [data-theme="original"][data-mode="dark"] {
+    --bg: #020617;
+    --surface: #020617;
+    --card: #020617;
+    --text: #E2E8F0;
+    --muted: #94A3B8;
+    --primary: #38BDF8;
+    --secondary: #818CF8;
+    --accent: #22D3EE;
+    --border: #1E293B;
+    --shadow: rgba(15,23,42,0.6);
+  }
+
+  /* Original Theme (Professional) - Light */
+  [data-theme="original"][data-mode="light"] {
+    --bg: #F8FAFC;
+    --surface: #FFFFFF;
+    --card: #F1F5F9;
+    --text: #020617;
+    --muted: #475569;
+    --primary: #0284C7;
+    --secondary: #4F46E5;
+    --accent: #06B6D4;
+    --border: #E2E8F0;
+    --shadow: rgba(2,132,199,0.15);
+  }
+
+  /* Neo Mint Terminal - Dark */
+  [data-theme="mint"][data-mode="dark"] {
+    --bg: #020617;
+    --surface: #020617;
+    --card: #020617;
+    --text: #E2E8F0;
+    --muted: #94A3B8;
+    --primary: #2DD4BF;
+    --secondary: #22D3EE;
+    --accent: #A3E635;
+    --border: #1E293B;
+    --shadow: rgba(45,212,191,0.18);
+  }
+
+  /* Neo Mint Terminal - Light */
+  [data-theme="mint"][data-mode="light"] {
+    --bg: #ECFEFF;
+    --surface: #FFFFFF;
+    --card: #CCFBF1;
+    --text: #022C22;
+    --muted: #134E4A;
+    --primary: #0D9488;
+    --secondary: #0891B2;
+    --accent: #65A30D;
+    --border: #99F6E4;
+    --shadow: rgba(13,148,136,0.18);
+  }
+
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px; /* Account for fixed navbar */
   }
 
   body {
-    background-color: #111827; /* gray-900 */
-    color: #ffffff;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
@@ -43,6 +170,20 @@
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
+
+  .hover-lift {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+
+  .soft-card {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 6px -1px var(--shadow), 0 2px 4px -1px var(--shadow);
+  }
 }
 
 @keyframes fadeIn {
@@ -56,22 +197,22 @@
   }
 }
 
-/* Custom scrollbar for dark theme */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1f2937; /* gray-800 */
+  background: var(--surface);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4b5563; /* gray-600 */
+  background: var(--muted);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #6b7280; /* gray-500 */
+  background: var(--secondary); /* visual feedback using theme secondary */
 }
 
 /* Smooth transitions for all interactive elements */

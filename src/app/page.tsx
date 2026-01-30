@@ -252,38 +252,38 @@ export default function HomePage() {
   ];
 
   const getColorClasses = (color: string) => {
-    const colorMap = {
-      blue: "bg-blue-500/20 text-blue-300 border-blue-500/30",
-      green: "bg-green-500/20 text-green-300 border-green-500/30",
-      purple: "bg-purple-500/20 text-purple-300 border-purple-500/30",
-      orange: "bg-orange-500/20 text-orange-300 border-orange-500/30",
-      pink: "bg-pink-500/20 text-pink-300 border-pink-500/30",
-      indigo: "bg-indigo-500/20 text-indigo-300 border-indigo-500/30",
-      gold: "bg-yellow-500/20 text-yellow-300 border-yellow-500/30",
-      silver: "bg-gray-500/20 text-gray-300 border-gray-500/30",
+    const colorMap: Record<string, string> = {
+      blue: "bg-primary/10 text-primary border-primary/20",
+      green: "bg-secondary/10 text-secondary border-secondary/20",
+      purple: "bg-accent/10 text-accent border-accent/20",
+      orange: "bg-primary/10 text-primary border-primary/20",
+      pink: "bg-secondary/10 text-secondary border-secondary/20",
+      indigo: "bg-accent/10 text-accent border-accent/20",
+      gold: "bg-primary/10 text-primary border-primary/20",
+      silver: "bg-secondary/10 text-secondary border-secondary/20",
     };
-    return colorMap[color as keyof typeof colorMap] || colorMap.blue;
+    return colorMap[color] || colorMap.blue;
   };
 
   return (
-    <div className="bg-gray-900 text-white">
+    <div className="bg-bg text-text transition-colors duration-300">
       {/* Hero Section */}
       <section
         id="home"
-        className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900/20 to-gray-900 flex items-center justify-center"
+        className="min-h-screen bg-gradient-to-br from-bg via-primary/5 to-bg flex items-center justify-center pt-16"
       >
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 text-center py-20">
           <div className="mb-8">
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-4 animate-fade-in">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-text mb-4 animate-fade-in tracking-tight">
               Sanket Shinde
             </h1>
-            <p className="text-lg sm:text-2xl text-blue-400 font-medium mb-6 animate-fade-in-delay-1">
+            <p className="text-lg sm:text-2xl text-primary font-medium mb-6 animate-fade-in-delay-1">
               Software Engineering Student
             </p>
-            <p className="text-lg sm:text-1xl text-blue-400 font-medium mb-6 animate-fade-in-delay-1">
+            <p className="text-lg sm:text-1xl text-primary font-medium mb-6 animate-fade-in-delay-1">
               Upcoming Summer&apos;26 Intern @Barclays
             </p>
-            <p className="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed animate-fade-in-delay-2">
+            <p className="text-base sm:text-lg text-muted max-w-3xl mx-auto leading-relaxed animate-fade-in-delay-2">
               Hello everyone, I am Sanket Shinde. I am an Engineering
               Undergraduate specializing in Information Technology at Pune
               Institute of Computer Technology. A strong academic performer,
@@ -299,16 +299,22 @@ export default function HomePage() {
 
           <div className="mb-12 animate-fade-in-delay-3">
             <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 sm:gap-6 mb-8">
-              <div className="flex items-center gap-2 text-gray-300">
-                <Phone className="w-5 h-5 text-blue-400" />
+              <div className="flex items-center gap-3 text-muted group">
+                <div className="p-2 rounded-full bg-primary/10 text-primary group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
+                  <Phone className="w-5 h-5" />
+                </div>
                 <span>+91 9156857062</span>
               </div>
-              <div className="flex items-center gap-2 text-gray-300">
-                <Mail className="w-5 h-5 text-blue-400" />
+              <div className="flex items-center gap-3 text-muted group">
+                <div className="p-2 rounded-full bg-primary/10 text-primary group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
+                  <Mail className="w-5 h-5" />
+                </div>
                 <span>sanketshinde1827@gmail.com</span>
               </div>
-              <div className="flex items-center gap-2 text-gray-300">
-                <MapPin className="w-5 h-5 text-blue-400" />
+              <div className="flex items-center gap-3 text-muted group">
+                <div className="p-2 rounded-full bg-primary/10 text-primary group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
+                  <MapPin className="w-5 h-5" />
+                </div>
                 <span>Pune, Maharashtra</span>
               </div>
             </div>
@@ -318,7 +324,7 @@ export default function HomePage() {
                 href="https://www.linkedin.com/in/sanket-shinde-067650288/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300 hover:scale-105 shadow-lg"
+                className="flex items-center gap-2 bg-primary text-bg px-6 py-3 rounded-xl font-medium hover:bg-primary/90 transition-all duration-300 hover:scale-105 shadow-lg shadow-primary/20"
               >
                 <Linkedin className="w-5 h-5" />
                 <span>LinkedIn</span>
@@ -327,7 +333,7 @@ export default function HomePage() {
                 href="https://github.com/sanketshinde2005"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-gray-700 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-all duration-300 hover:scale-105 shadow-lg"
+                className="flex items-center gap-2 bg-surface text-text border border-border px-6 py-3 rounded-xl font-medium hover:bg-card hover:border-primary/50 transition-all duration-300 hover:scale-105 shadow-lg"
               >
                 <Github className="w-5 h-5" />
                 <span>GitHub</span>
@@ -336,7 +342,7 @@ export default function HomePage() {
                 href="https://leetcode.com/u/sanket_shinde_1310/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-all duration-300 hover:scale-105 shadow-lg"
+                className="flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-xl font-medium hover:bg-accent/90 transition-all duration-300 hover:scale-105 shadow-lg shadow-accent/20"
               >
                 <Code className="w-5 h-5" />
                 <span>LeetCode</span>
@@ -347,46 +353,46 @@ export default function HomePage() {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-16 sm:py-20 bg-gray-800/50">
+      <section id="education" className="section-padding bg-surface/30">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text mb-4">
               Education
             </h2>
-            <p className="text-lg sm:text-xl text-gray-400">
+            <p className="text-lg sm:text-xl text-muted">
               My academic journey and achievements.
             </p>
           </div>
 
-          <div className="bg-gray-800 rounded-2xl shadow-xl p-6 sm:p-8 lg:p-12 hover:shadow-2xl transition-shadow duration-300 border border-gray-700">
+          <div className="soft-card rounded-2xl p-6 sm:p-8 lg:p-12 hover-lift transition-all duration-300">
             <div className="flex flex-col sm:flex-row items-start gap-6 sm:gap-8">
-              <div className="bg-blue-500/20 p-4 rounded-full border border-blue-500/30 mx-auto sm:mx-0">
-                <GraduationCap className="w-8 h-8 text-blue-400" />
+              <div className="bg-primary/10 p-4 rounded-full border border-primary/20 mx-auto sm:mx-0">
+                <GraduationCap className="w-8 h-8 text-primary" />
               </div>
               <div className="flex-1 w-full">
-                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+                <h3 className="text-2xl sm:text-3xl font-bold text-text mb-2">
                   Bachelor of Engineering (IT)
                 </h3>
-                <h4 className="text-xl text-blue-400 font-semibold mb-4">
+                <h4 className="text-xl text-primary font-semibold mb-4">
                   Information Technology
                 </h4>
-                <p className="text-lg text-gray-300 mb-4">
+                <p className="text-lg text-muted mb-4">
                   Pune Institute of Computer Technology (PICT)
                 </p>
                 <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 mb-6">
                   <div className="flex items-center gap-2">
-                    <Calendar className="w-5 h-5 text-gray-400" />
-                    <span className="text-gray-300">2023 - Present</span>
+                    <Calendar className="w-5 h-5 text-muted" />
+                    <span className="text-text">2023 - Present</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Award className="w-5 h-5 text-green-400" />
-                    <span className="text-gray-300">
-                      CGPA: <strong className="text-green-400">9.72</strong>
+                    <Award className="w-5 h-5 text-secondary" />
+                    <span className="text-text">
+                      CGPA: <strong className="text-secondary">9.72</strong>
                     </span>
                   </div>
                 </div>
-                <div className="bg-gray-700/50 rounded-lg p-4 sm:p-6 border border-gray-600">
-                  <h5 className="font-semibold text-white mb-3">
+                <div className="bg-bg/50 rounded-lg p-4 sm:p-6 border border-border">
+                  <h5 className="font-semibold text-text mb-3">
                     Key Coursework
                   </h5>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -401,8 +407,8 @@ export default function HomePage() {
                       "Cloud Computing",
                     ].map((course) => (
                       <div key={course} className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-blue-400 rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-300 text-sm sm:text-base">
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                        <span className="text-muted text-sm sm:text-base">
                           {course}
                         </span>
                       </div>
@@ -416,45 +422,45 @@ export default function HomePage() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-16 sm:py-20">
+      <section id="experience" className="section-padding">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text mb-4">
               Experience
             </h2>
-            <p className="text-lg sm:text-xl text-gray-400">
+            <p className="text-lg sm:text-xl text-muted">
               Professional journey and contributions.
             </p>
           </div>
           <div className="space-y-8">
-            <div className="bg-gray-800 rounded-2xl shadow-xl p-6 sm:p-8 hover:shadow-2xl transition-shadow duration-300 border border-gray-700">
+            <div className="soft-card rounded-2xl p-6 sm:p-8 hover-lift transition-all duration-300">
               <div className="flex flex-col sm:flex-row items-start gap-6">
-                <div className="bg-blue-500/20 p-4 rounded-full border border-blue-500/30 mx-auto sm:mx-0">
-                  <Briefcase className="w-8 h-8 text-blue-400" />
+                <div className="bg-primary/10 p-4 rounded-full border border-primary/20 mx-auto sm:mx-0">
+                  <Briefcase className="w-8 h-8 text-primary" />
                 </div>
                 <div className="flex-1 w-full">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
                     <div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-white mb-1">
+                      <h3 className="text-xl sm:text-2xl font-bold text-text mb-1">
                         Platform Engineering Intern
                       </h3>
-                      <h4 className="text-lg sm:text-xl text-blue-400 font-semibold mb-2 sm:mb-0">
+                      <h4 className="text-lg sm:text-xl text-primary font-semibold mb-2 sm:mb-0">
                         Lightbeam.ai
                       </h4>
                     </div>
                     <div className="flex flex-col sm:items-end gap-2 text-sm sm:text-base">
-                      <div className="flex items-center gap-2 text-gray-400">
+                      <div className="flex items-center gap-2 text-muted">
                         <Calendar className="w-4 h-4" />
                         <span>April 2025 - Present</span>
                       </div>
-                      <div className="flex items-center gap-2 text-gray-400">
+                      <div className="flex items-center gap-2 text-muted">
                         <MapPin className="w-4 h-4" />
                         <span>Hybrid</span>
                       </div>
                     </div>
                   </div>
                   <div className="mb-6">
-                    <h5 className="font-semibold text-white mb-3">
+                    <h5 className="font-semibold text-text mb-3">
                       Key Contributions:
                     </h5>
                     <ul className="space-y-3">
@@ -466,8 +472,8 @@ export default function HomePage() {
                         "Collaborated with development teams to optimize application performance and reliability",
                       ].map((contribution, index) => (
                         <li key={index} className="flex items-start gap-3">
-                          <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="text-gray-300">{contribution}</span>
+                          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-muted">{contribution}</span>
                         </li>
                       ))}
                     </ul>
@@ -484,7 +490,7 @@ export default function HomePage() {
                     ].map((tech) => (
                       <span
                         key={tech}
-                        className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm font-medium border border-blue-500/30"
+                        className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium border border-primary/20"
                       >
                         {tech}
                       </span>
@@ -493,34 +499,34 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="bg-gray-800 rounded-2xl shadow-xl p-6 sm:p-8 hover:shadow-2xl transition-shadow duration-300 border border-gray-700">
+            <div className="soft-card rounded-2xl p-6 sm:p-8 hover-lift transition-all duration-300">
               <div className="flex flex-col sm:flex-row items-start gap-6">
-                <div className="bg-green-500/20 p-4 rounded-full border border-green-500/30 mx-auto sm:mx-0">
-                  <Briefcase className="w-8 h-8 text-green-400" />
+                <div className="bg-secondary/10 p-4 rounded-full border border-secondary/20 mx-auto sm:mx-0">
+                  <Briefcase className="w-8 h-8 text-secondary" />
                 </div>
                 <div className="flex-1 w-full">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
                     <div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-white mb-1">
+                      <h3 className="text-xl sm:text-2xl font-bold text-text mb-1">
                         Workday HCM + VNDLY Training
                       </h3>
-                      <h4 className="text-lg sm:text-xl text-green-400 font-semibold mb-2 sm:mb-0">
+                      <h4 className="text-lg sm:text-xl text-secondary font-semibold mb-2 sm:mb-0">
                         Lightbeam.ai
                       </h4>
                     </div>
                     <div className="flex flex-col sm:items-end gap-2 text-sm sm:text-base">
-                      <div className="flex items-center gap-2 text-gray-400">
+                      <div className="flex items-center gap-2 text-muted">
                         <Calendar className="w-4 h-4" />
                         <span>May 2025</span>
                       </div>
-                      <div className="flex items-center gap-2 text-gray-400">
+                      <div className="flex items-center gap-2 text-muted">
                         <MapPin className="w-4 h-4" />
                         <span>Remote</span>
                       </div>
                     </div>
                   </div>
                   <div className="mb-6">
-                    <h5 className="font-semibold text-white mb-3">
+                    <h5 className="font-semibold text-text mb-3">
                       Training Highlights:
                     </h5>
                     <ul className="space-y-3">
@@ -531,8 +537,8 @@ export default function HomePage() {
                         "Developed skills in report building, calculated fields, and business process configuration",
                       ].map((highlight, index) => (
                         <li key={index} className="flex items-start gap-3">
-                          <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="text-gray-300">{highlight}</span>
+                          <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-muted">{highlight}</span>
                         </li>
                       ))}
                     </ul>
@@ -547,7 +553,7 @@ export default function HomePage() {
                     ].map((skill) => (
                       <span
                         key={skill}
-                        className="bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-sm font-medium border border-green-500/30"
+                        className="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium border border-secondary/20"
                       >
                         {skill}
                       </span>
@@ -561,13 +567,13 @@ export default function HomePage() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-16 sm:py-20 bg-gray-800/50">
+      <section id="skills" className="py-16 sm:py-20 bg-surface/50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text mb-4">
               Skills & Technologies
             </h2>
-            <p className="text-lg sm:text-xl text-gray-400">
+            <p className="text-lg sm:text-xl text-muted">
               My technical expertise and proficiencies.
             </p>
           </div>
@@ -575,7 +581,7 @@ export default function HomePage() {
             {skillCategories.map((category, index) => (
               <div
                 key={category.title}
-                className="bg-gray-800 rounded-2xl shadow-xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-gray-700"
+                className="soft-card rounded-2xl p-6 sm:p-8 hover-lift transition-all duration-300"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="flex items-center gap-4 mb-6">
@@ -586,7 +592,7 @@ export default function HomePage() {
                   >
                     {category.icon}
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white">
+                  <h3 className="text-xl sm:text-2xl font-bold text-text">
                     {category.title}
                   </h3>
                 </div>
@@ -609,13 +615,13 @@ export default function HomePage() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-16 sm:py-20">
+      <section id="projects" className="section-padding">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text mb-4">
               Projects
             </h2>
-            <p className="text-lg sm:text-xl text-gray-400">
+            <p className="text-lg sm:text-xl text-muted">
               Showcasing innovative solutions and technical expertise.
             </p>
           </div>
@@ -623,20 +629,20 @@ export default function HomePage() {
             {projects.map((project, index) => (
               <div
                 key={project.title}
-                className="bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-700"
+                className="soft-card rounded-2xl overflow-hidden hover-lift transition-all duration-300"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <div className="p-6 sm:p-8 lg:p-12">
                   <div className="flex items-center gap-4 mb-4">
-                    <h3 className="text-2xl sm:text-3xl font-bold text-blue-400">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-primary">
                       {project.title}
                     </h3>
                   </div>
-                  <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-6">
+                  <p className="text-text text-base sm:text-lg leading-relaxed mb-6">
                     {project.description}
                   </p>
                   <div className="mb-6">
-                    <h4 className="font-semibold text-white mb-3">
+                    <h4 className="font-semibold text-text mb-3">
                       Key Features:
                     </h4>
                     <ul className="space-y-2">
@@ -645,21 +651,21 @@ export default function HomePage() {
                           key={featureIndex}
                           className="flex items-start gap-3"
                         >
-                          <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="text-gray-300">{feature}</span>
+                          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-muted">{feature}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div className="mb-8">
-                    <h4 className="font-semibold text-white mb-3">
+                    <h4 className="font-semibold text-text mb-3">
                       Tech Stack:
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {project.techStack.map((tech) => (
                         <span
                           key={tech}
-                          className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm font-medium border border-blue-500/30"
+                          className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium border border-primary/20"
                         >
                           {tech}
                         </span>
@@ -671,7 +677,7 @@ export default function HomePage() {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+                      className="flex items-center gap-2 bg-primary text-bg px-5 py-2.5 sm:px-6 sm:py-3 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg shadow-primary/20"
                     >
                       <Github className="w-5 h-5" />
                       <span>View Code</span>
@@ -681,7 +687,7 @@ export default function HomePage() {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 bg-gray-700 text-white px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg hover:bg-gray-600 transition-all duration-300 hover:scale-105 shadow-lg"
+                        className="flex items-center gap-2 bg-surface text-text border border-border px-5 py-2.5 sm:px-6 sm:py-3 rounded-xl hover:bg-card transition-all duration-300 hover:scale-105 shadow-lg"
                       >
                         <ExternalLink className="w-5 h-5" />
                         <span>Live Demo</span>
@@ -696,13 +702,13 @@ export default function HomePage() {
       </section>
 
       {/* Certificates Section */}
-      <section id="certificates" className="py-16 sm:py-20 bg-gray-800/50">
+      <section id="certificates" className="section-padding bg-surface/30">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text mb-4">
               Certificates
             </h2>
-            <p className="text-lg sm:text-xl text-gray-400">
+            <p className="text-lg sm:text-xl text-muted">
               Professional certifications and achievements.
             </p>
           </div>
@@ -710,50 +716,50 @@ export default function HomePage() {
             {certificates.map((cert, index) => (
               <div
                 key={cert.title}
-                className="bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-700"
+                className="soft-card rounded-2xl overflow-hidden hover-lift transition-all duration-300"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 <div className="p-6 sm:p-8">
                   <div className="flex items-start gap-6 mb-6">
-                    <div className="bg-blue-500/20 p-4 rounded-full border border-blue-500/30 flex-shrink-0">
-                      <Award className="w-8 h-8 text-blue-400" />
+                    <div className="bg-primary/10 p-4 rounded-full border border-primary/20 flex-shrink-0">
+                      <Award className="w-8 h-8 text-primary" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                      <h3 className="text-xl sm:text-2xl font-bold text-text mb-2">
                         {cert.title}
                       </h3>
-                      <p className="text-base sm:text-lg font-semibold text-blue-400 mb-1">
+                      <p className="text-base sm:text-lg font-semibold text-primary mb-1">
                         {cert.issuer}
                       </p>
-                      <div className="flex items-center gap-2 text-gray-400 mb-4 text-sm sm:text-base">
+                      <div className="flex items-center gap-2 text-muted mb-4 text-sm sm:text-base">
                         <Calendar className="w-4 h-4" />
                         <span>{cert.date}</span>
                       </div>
                     </div>
                   </div>
-                  <p className="text-gray-300 leading-relaxed mb-6">
+                  <p className="text-text leading-relaxed mb-6">
                     {cert.description}
                   </p>
                   <div className="mb-6">
-                    <h4 className="font-semibold text-white mb-3">
+                    <h4 className="font-semibold text-text mb-3">
                       Skills Validated:
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {cert.skills.map((skill) => (
                         <span
                           key={skill}
-                          className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm font-medium border border-blue-500/30"
+                          className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium border border-primary/20"
                         >
                           {skill}
                         </span>
                       ))}
                     </div>
                   </div>
-                  <div className="border-t border-gray-700 pt-6">
+                  <div className="border-t border-border pt-6">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                       <div>
-                        <p className="text-sm text-gray-400">Credential ID:</p>
-                        <p className="font-mono text-xs sm:text-sm text-gray-300">
+                        <p className="text-sm text-muted">Credential ID:</p>
+                        <p className="font-mono text-xs sm:text-sm text-text">
                           {cert.credentialId}
                         </p>
                       </div>
@@ -761,7 +767,7 @@ export default function HomePage() {
                         href={cert.certificateUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-shrink-0 flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+                        className="flex-shrink-0 flex items-center gap-2 bg-primary text-bg px-5 py-2.5 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:bg-primary/90"
                       >
                         <ExternalLink className="w-5 h-5" />
                         <span>Verify</span>
@@ -776,13 +782,13 @@ export default function HomePage() {
       </section>
 
       {/* Achievements Section */}
-      <section id="achievements" className="py-16 sm:py-20">
+      <section id="achievements" className="section-padding">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text mb-4">
               Achievements
             </h2>
-            <p className="text-lg sm:text-xl text-gray-400">
+            <p className="text-lg sm:text-xl text-muted">
               Hackathon wins, awards, and recognitions.
             </p>
           </div>
@@ -790,43 +796,43 @@ export default function HomePage() {
             {hackathons.map((hackathon, index) => (
               <div
                 key={hackathon.title}
-                className="bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-700"
+                className="soft-card rounded-2xl overflow-hidden hover-lift transition-all duration-300"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 <div className="p-6 sm:p-8">
                   <div className="flex flex-col sm:flex-row items-start gap-6 mb-6">
-                    <div className="bg-yellow-500/20 p-4 rounded-full border border-yellow-500/30 flex-shrink-0 mx-auto sm:mx-0">
-                      <Trophy className="w-8 h-8 text-yellow-400" />
+                    <div className="bg-accent/10 p-4 rounded-full border border-accent/20 flex-shrink-0 mx-auto sm:mx-0">
+                      <Trophy className="w-8 h-8 text-accent" />
                     </div>
                     <div className="flex-1 w-full">
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
                         <div className="mb-4 sm:mb-0">
-                          <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                          <h3 className="text-xl sm:text-2xl font-bold text-text mb-2">
                             {hackathon.title}
                           </h3>
-                          <p className="text-lg font-semibold text-yellow-400 mb-1">
+                          <p className="text-lg font-semibold text-accent mb-1">
                             {hackathon.position}
                           </p>
-                          <p className="text-gray-400">{hackathon.category}</p>
+                          <p className="text-muted">{hackathon.category}</p>
                         </div>
                         <div className="text-left sm:text-right">
-                          <div className="flex items-center gap-2 text-gray-400 mb-2">
+                          <div className="flex items-center gap-2 text-muted mb-2">
                             <Calendar className="w-4 h-4" />
                             <span>{hackathon.date}</span>
                           </div>
-                          <div className="text-xl sm:text-2xl font-bold text-yellow-400">
+                          <div className="text-xl sm:text-2xl font-bold text-accent">
                             {hackathon.prize}
                           </div>
                         </div>
                       </div>
-                      <p className="text-gray-300 leading-relaxed mb-6">
+                      <p className="text-text leading-relaxed mb-6">
                         {hackathon.description}
                       </p>
                       <div className="flex flex-wrap gap-2 mb-6">
                         {hackathon.technologies.map((tech) => (
                           <span
                             key={tech}
-                            className="bg-gray-700 text-gray-300 px-2 py-1 rounded text-sm"
+                            className="bg-surface text-muted px-2 py-1 rounded text-sm border border-border"
                           >
                             {tech}
                           </span>
@@ -836,7 +842,7 @@ export default function HomePage() {
                         href={hackathon.certificateUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-yellow-600 hover:bg-yellow-700 text-white px-5 py-2.5 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+                        className="inline-flex items-center gap-2 bg-accent text-white hover:bg-accent/90 px-5 py-2.5 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-accent/20"
                       >
                         <ExternalLink className="w-5 h-5" />
                         <span>View Certificate</span>
@@ -851,13 +857,13 @@ export default function HomePage() {
       </section>
 
       {/* Extra-Curricular Section */}
-      <section id="extra-curricular" className="py-16 sm:py-20 bg-gray-800/50">
+      <section id="extra-curricular" className="section-padding bg-surface/30">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text mb-4">
               Extra-Curricular Activities
             </h2>
-            <p className="text-lg sm:text-xl text-gray-400">
+            <p className="text-lg sm:text-xl text-muted">
               Leadership, competitions, and community involvement.
             </p>
           </div>
@@ -894,22 +900,22 @@ export default function HomePage() {
             ].map((activity) => (
               <div
                 key={activity.title}
-                className="bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-700"
+                className="soft-card rounded-xl p-6 hover-lift transition-all duration-300"
               >
                 <div className="flex items-start gap-4">
                   <div className="text-3xl">{activity.icon}</div>
                   <div className="flex-1">
-                    <h4 className="text-xl font-bold text-white mb-1">
+                    <h4 className="text-xl font-bold text-text mb-1">
                       {activity.title}
                     </h4>
-                    <p className="text-blue-400 font-semibold mb-2">
+                    <p className="text-primary font-semibold mb-2">
                       {activity.org}
                     </p>
-                    <div className="flex items-center gap-2 text-gray-400 mb-4">
+                    <div className="flex items-center gap-2 text-muted mb-4">
                       <Calendar className="w-4 h-4" />
                       <span className="text-sm">{activity.date}</span>
                     </div>
-                    <p className="text-gray-300 text-sm leading-relaxed">
+                    <p className="text-text text-sm leading-relaxed">
                       {activity.desc}
                     </p>
                   </div>
@@ -917,32 +923,32 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-          <div className="bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-700">
-            <h3 className="text-2xl font-bold text-white mb-8 text-center">
+          <div className="soft-card rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-text mb-8 text-center">
               Activity Summary
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
                 {
-                  icon: <Users className="w-8 h-8 text-blue-400" />,
+                  icon: <Users className="w-8 h-8 text-primary" />,
                   value: "2+",
                   label: "Leadership Roles",
                   color: "blue",
                 },
                 {
-                  icon: <Trophy className="w-8 h-8 text-yellow-400" />,
+                  icon: <Trophy className="w-8 h-8 text-accent" />,
                   value: "5+",
                   label: "Prizes Won",
                   color: "yellow",
                 },
                 {
-                  icon: <Star className="w-8 h-8 text-green-400" />,
+                  icon: <Star className="w-8 h-8 text-secondary" />,
                   value: "3",
                   label: "Sports Activities",
                   color: "green",
                 },
                 {
-                  icon: <Heart className="w-8 h-8 text-red-400" />,
+                  icon: <Heart className="w-8 h-8 text-primary" />,
                   value: "25+",
                   label: "Tech Stacks Explored",
                   color: "red",
@@ -950,14 +956,26 @@ export default function HomePage() {
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div
-                    className={`w-16 h-16 bg-${stat.color}-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-${stat.color}-500/30`}
+                    className={`w-16 h-16 bg-${
+                      stat.color === "blue" || stat.color === "red"
+                        ? "primary"
+                        : stat.color === "yellow"
+                        ? "accent"
+                        : "secondary"
+                    }/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-${
+                      stat.color === "blue" || stat.color === "red"
+                        ? "primary"
+                        : stat.color === "yellow"
+                        ? "accent"
+                        : "secondary"
+                    }/20`}
                   >
                     {stat.icon}
                   </div>
-                  <div className="text-3xl font-bold text-white mb-2">
+                  <div className="text-3xl font-bold text-text mb-2">
                     {stat.value}
                   </div>
-                  <p className="text-gray-400 text-sm sm:text-base">
+                  <p className="text-muted text-sm sm:text-base">
                     {stat.label}
                   </p>
                 </div>
@@ -968,14 +986,14 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-gray-900 border-t border-gray-800">
+      <footer className="py-12 bg-bg border-t border-border">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center gap-6 mb-8">
             <a
               href="https://www.linkedin.com/in/sanket-shinde-067650288/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-blue-400 transition-colors"
+              className="text-muted hover:text-primary transition-colors"
             >
               <Linkedin className="w-6 h-6" />
             </a>
@@ -983,7 +1001,7 @@ export default function HomePage() {
               href="https://github.com/sanketshinde2005"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors"
+              className="text-muted hover:text-text transition-colors"
             >
               <Github className="w-6 h-6" />
             </a>
@@ -991,12 +1009,12 @@ export default function HomePage() {
               href="https://leetcode.com/u/sanket_shinde_1310/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-orange-400 transition-colors"
+              className="text-muted hover:text-accent transition-colors"
             >
               <Code className="w-6 h-6" />
             </a>
           </div>
-          <p className="text-gray-400">
+          <p className="text-muted">
             © 2025 Sanket Shinde. Built with Next.js and Tailwind CSS.
           </p>
         </div>
