@@ -16,6 +16,8 @@ import {
   ExternalLink,
 } from "lucide-react";
 
+import HeroBackgroundWrapper from "@/components/hero-background-wrapper";
+
 export default function HomePage() {
   const skillCategories = [
     {
@@ -55,6 +57,7 @@ export default function HomePage() {
         "React",
         "Next.js",
         "Node.js",
+        "Spring Boot",
         "Express.js",
         "Refine",
         "Flask",
@@ -103,6 +106,53 @@ export default function HomePage() {
 
   const projects = [
     {
+      title: "SkillSwap",
+      description:
+        "SkillSwap is a student-driven platform where learners exchange skills, collaborate on real knowledge, and grow together.",
+      techStack: [
+        "Spring Boot",
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "NextAuth.js",
+        "Tailwind CSS",
+      ],
+      features: [
+        "AI-powered job recommendation system",
+        "Advanced search and filtering options",
+        "Applicant tracking system (ATS)",
+        "Real-time notifications",
+        "Company profiles and reviews",
+      ],
+      githubUrl: "https://github.com/sanketshinde2005/SkillSwap",
+      liveUrl: "https://skillswap-sigma-swart.vercel.app/",
+      color: "red",
+    },
+    {
+      title: "NexJob",
+      description:
+        "A modern job portal platform that streamlines the hiring process for both job seekers and employers, featuring AI-powered job matching and comprehensive applicant tracking.",
+      techStack: [
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Prisma",
+        "NextAuth.js",
+        "Tailwind CSS",
+        "Vercel",
+      ],
+      features: [
+        "AI-powered job recommendation system",
+        "Advanced search and filtering options",
+        "Applicant tracking system (ATS)",
+        "Real-time notifications",
+        "Company profiles and reviews",
+      ],
+      githubUrl: "https://github.com/Rishabh-0615/NeXJob",
+      liveUrl: "https://nexjob-1ioj.onrender.com/",
+      color: "purple",
+    },
+    {
       title: "Wellify",
       description:
         "A comprehensive healthcare management platform that connects patients with healthcare providers, featuring appointment scheduling, medical records management, and telemedicine capabilities.",
@@ -149,53 +199,6 @@ export default function HomePage() {
       githubUrl: "https://github.com/sanketshinde2005/Py-GPT",
       liveUrl: "",
       color: "green",
-    },
-    {
-      title: "NexJob",
-      description:
-        "A modern job portal platform that streamlines the hiring process for both job seekers and employers, featuring AI-powered job matching and comprehensive applicant tracking.",
-      techStack: [
-        "Next.js",
-        "TypeScript",
-        "PostgreSQL",
-        "Prisma",
-        "NextAuth.js",
-        "Tailwind CSS",
-        "Vercel",
-      ],
-      features: [
-        "AI-powered job recommendation system",
-        "Advanced search and filtering options",
-        "Applicant tracking system (ATS)",
-        "Real-time notifications",
-        "Company profiles and reviews",
-      ],
-      githubUrl: "https://github.com/Rishabh-0615/NeXJob",
-      liveUrl: "https://nexjob-1ioj.onrender.com/",
-      color: "purple",
-    },
-    {
-      title: "SkillSwap",
-      description:
-        "SkillSwap is a student-driven platform where learners exchange skills, collaborate on real knowledge, and grow together.",
-      techStack: [
-        "Spring Boot",
-        "Next.js",
-        "TypeScript",
-        "PostgreSQL",
-        "NextAuth.js",
-        "Tailwind CSS",
-      ],
-      features: [
-        "AI-powered job recommendation system",
-        "Advanced search and filtering options",
-        "Applicant tracking system (ATS)",
-        "Real-time notifications",
-        "Company profiles and reviews",
-      ],
-      githubUrl: "https://github.com/sanketshinde2005/SkillSwap",
-      liveUrl: "https://skillswap-sigma-swart.vercel.app/",
-      color: "purple",
     },
   ];
 
@@ -293,20 +296,31 @@ export default function HomePage() {
       {/* Hero Section */}
       <section
         id="home"
-        className="min-h-screen bg-gradient-to-br from-bg via-primary/5 to-bg flex items-center justify-center pt-16"
+        className="min-h-[90vh] sm:min-h-screen relative flex items-center justify-center pt-32 pb-20 sm:pt-24 sm:pb-32 overflow-hidden"
       >
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 text-center py-20">
-          <div className="mb-8">
+        <div className="absolute inset-0 bg-gradient-to-b from-bg via-primary/5 to-bg -z-10" />
+        
+        {/* Mobile Fallback - Soft Radial Glow */}
+        <div className="absolute inset-0 flex items-center justify-center md:hidden -z-10 opacity-40 mix-blend-plus-lighter pointer-events-none">
+           <div className="w-64 h-64 bg-primary/30 rounded-full blur-[80px] animate-pulse-slow" />
+           <div className="absolute w-48 h-48 bg-secondary/30 rounded-full blur-[60px] translate-x-10 translate-y-10 animate-pulse-slow delay-700" />
+        </div>
+
+        {/* 3D Background - Desktop Only */}
+        <HeroBackgroundWrapper />
+
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 text-center relative z-10">
+          <div className="mb-6 sm:mb-8">
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-text mb-4 animate-fade-in tracking-tight">
               Sanket Shinde
             </h1>
-            <p className="text-lg sm:text-2xl text-primary font-medium mb-6 animate-fade-in-delay-1">
+            <p className="text-xl sm:text-2xl text-primary font-medium mb-3 sm:mb-6 animate-fade-in-delay-1">
               Software Engineering Student
             </p>
-            <p className="text-lg sm:text-1xl text-primary font-medium mb-6 animate-fade-in-delay-1">
+            <p className="text-lg sm:text-xl text-primary/80 font-medium mb-6 animate-fade-in-delay-1">
               Upcoming Summer&apos;26 Intern @Barclays
             </p>
-            <p className="text-base sm:text-lg text-muted max-w-3xl mx-auto leading-relaxed animate-fade-in-delay-2">
+            <p className="text-base sm:text-lg text-muted max-w-2xl mx-auto leading-relaxed animate-fade-in-delay-2 px-4 sm:px-0">
               Hello everyone, I am Sanket Shinde. I am an Engineering
               Undergraduate specializing in Information Technology at Pune
               Institute of Computer Technology. A strong academic performer,
@@ -376,49 +390,69 @@ export default function HomePage() {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="section-padding bg-surface/30">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text mb-4">
-              Education
-            </h2>
-            <p className="text-lg sm:text-xl text-muted">
-              My academic journey and achievements.
-            </p>
-          </div>
-
-          <div className="soft-card rounded-2xl p-6 sm:p-8 lg:p-12 hover-lift transition-all duration-300">
-            <div className="flex flex-col sm:flex-row items-start gap-6 sm:gap-8">
-              <div className="bg-primary/10 p-4 rounded-full border border-primary/20 mx-auto sm:mx-0">
-                <GraduationCap className="w-8 h-8 text-primary" />
+      <section id="education" className="section-padding relative">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent opacity-50" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-12 gap-12 sm:gap-16">
+            {/* Left Column - Sticky Headline */}
+            <div className="lg:col-span-4 lg:sticky lg:top-32 self-start">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-primary/10 p-4 rounded-2xl border border-primary/20">
+                  <GraduationCap className="w-8 h-8 text-primary" />
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-bold text-text">
+                  Education
+                </h2>
               </div>
-              <div className="flex-1 w-full">
-                <h3 className="text-2xl sm:text-3xl font-bold text-text mb-2">
-                  Bachelor of Engineering (IT)
-                </h3>
-                <h4 className="text-xl text-primary font-semibold mb-4">
-                  Information Technology
-                </h4>
-                <p className="text-lg text-muted mb-4">
-                  Pune Institute of Computer Technology (PICT)
-                </p>
-                <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 mb-6">
-                  <div className="flex items-center gap-2">
-                    <Calendar className="w-5 h-5 text-muted" />
-                    <span className="text-text">2023 - Present</span>
-                  </div>
-                  <div className="flex items-center gap-2">
+              <p className="text-lg text-muted mb-8 text-balance">
+                My academic journey has been driven by a passion for computer science and a commitment to excellence.
+              </p>
+              
+              <div className="hidden lg:block space-y-4">
+                 <div className="flex items-center gap-3 text-text/80">
+                    <Calendar className="w-5 h-5 text-primary" />
+                    <span>2023 - Present</span>
+                 </div>
+                 <div className="flex items-center gap-3 text-text/80">
+                    <MapPin className="w-5 h-5 text-primary" />
+                    <span>Pune, India</span>
+                 </div>
+              </div>
+            </div>
+
+            {/* Right Column - Content */}
+            <div className="lg:col-span-8">
+               <div className="soft-card rounded-2xl p-6 sm:p-10 hover-lift transition-all duration-300 border-l-4 border-l-primary">
+                <div className="mb-8">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-text mb-2">
+                    Bachelor of Engineering
+                  </h3>
+                  <h4 className="text-xl text-primary font-semibold mb-4">
+                    Information Technology
+                  </h4>
+                  <p className="text-lg text-text font-medium mb-2">
+                    Pune Institute of Computer Technology (PICT)
+                  </p>
+                   <div className="flex flex-wrap gap-4 mt-4 lg:hidden">
+                      <span className="flex items-center gap-2 text-sm text-muted">
+                        <Calendar className="w-4 h-4" /> 2023 - Present
+                      </span>
+                   </div>
+                   <div className="mt-6 inline-flex items-center gap-2 bg-secondary/10 px-4 py-2 rounded-lg border border-secondary/20">
                     <Award className="w-5 h-5 text-secondary" />
-                    <span className="text-text">
+                    <span className="text-text font-medium">
                       CGPA: <strong className="text-secondary">9.72</strong>
                     </span>
                   </div>
                 </div>
-                <div className="bg-bg/50 rounded-lg p-4 sm:p-6 border border-border">
-                  <h5 className="font-semibold text-text mb-3">
+
+                <div className="bg-surface/50 rounded-xl p-6 border border-border">
+                  <h5 className="font-semibold text-text mb-4 flex items-center gap-2">
+                    <Code className="w-5 h-5 text-primary" />
                     Key Coursework
                   </h5>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3">
                     {[
                       "Data Structures & Algorithms",
                       "Database Management Systems",
@@ -430,8 +464,8 @@ export default function HomePage() {
                       "Cloud Computing",
                     ].map((course) => (
                       <div key={course} className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-muted text-sm sm:text-base">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></div>
+                        <span className="text-muted text-sm sm:text-base hover:text-text transition-colors">
                           {course}
                         </span>
                       </div>
@@ -445,185 +479,185 @@ export default function HomePage() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="section-padding">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text mb-4">
-              Experience
-            </h2>
-            <p className="text-lg sm:text-xl text-muted">
-              Professional journey and contributions.
-            </p>
-          </div>
-          <div className="space-y-8">
-            <div className="soft-card rounded-2xl p-6 sm:p-8 hover-lift transition-all duration-300">
-              <div className="flex flex-col sm:flex-row items-start gap-6">
-                <div className="bg-primary/10 p-4 rounded-full border border-primary/20 mx-auto sm:mx-0">
+      <section id="experience" className="section-padding relative">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent opacity-50" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+           <div className="grid lg:grid-cols-12 gap-12 sm:gap-16">
+            {/* Left Column - Sticky Headline */}
+            <div className="lg:col-span-4 lg:sticky lg:top-32 self-start">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-primary/10 p-4 rounded-2xl border border-primary/20">
                   <Briefcase className="w-8 h-8 text-primary" />
                 </div>
-                <div className="flex-1 w-full">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                    <div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-text mb-1">
-                        Platform Engineering Intern
-                      </h3>
-                      <h4 className="text-lg sm:text-xl text-primary font-semibold mb-2 sm:mb-0">
-                        Lightbeam.ai
-                      </h4>
-                    </div>
-                    <div className="flex flex-col sm:items-end gap-2 text-sm sm:text-base">
-                      <div className="flex items-center gap-2 text-muted">
-                        <Calendar className="w-4 h-4" />
-                        <span>April 2025 - Present</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-muted">
-                        <MapPin className="w-4 h-4" />
-                        <span>Hybrid</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mb-6">
-                    <h5 className="font-semibold text-text mb-3">
-                      Key Contributions:
-                    </h5>
-                    <ul className="space-y-3">
-                      {[
-                        "Developed & maintained CI/CD pipelines using Jenkins & GitLab CI, reducing deployment time by 20%",
-                        "Implemented infrastructure as code using Terraform and GKE for AWS cloud resources",
-                        "Containerized applications using Docker and orchestrated with Kubernetes, improving scalability",
-                        "Set up monitoring and managment systems using Teleport for resource accessing in environments",
-                        "Collaborated with development teams to optimize application performance and reliability",
-                      ].map((contribution, index) => (
-                        <li key={index} className="flex items-start gap-3">
-                          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="text-muted">{contribution}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      "AWS",
-                      "Docker",
-                      "Kubernetes",
-                      "Terraform",
-                      "Jenkins",
-                      "GKE",
-                      "Helm",
-                    ].map((tech) => (
-                      <span
-                        key={tech}
-                        className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium border border-primary/20"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                <h2 className="text-3xl sm:text-4xl font-bold text-text">
+                  Experience
+                </h2>
               </div>
+              <p className="text-lg text-muted mb-8 text-balance">
+                Professional journey, key contributions, and industry exposure.
+              </p>
             </div>
-            <div className="soft-card rounded-2xl p-6 sm:p-8 hover-lift transition-all duration-300">
-              <div className="flex flex-col sm:flex-row items-start gap-6">
-                <div className="bg-secondary/10 p-4 rounded-full border border-secondary/20 mx-auto sm:mx-0">
-                  <Briefcase className="w-8 h-8 text-secondary" />
-                </div>
-                <div className="flex-1 w-full">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                    <div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-text mb-1">
-                        Workday HCM + VNDLY Training
-                      </h3>
-                      <h4 className="text-lg sm:text-xl text-secondary font-semibold mb-2 sm:mb-0">
-                        Lightbeam.ai
-                      </h4>
-                    </div>
-                    <div className="flex flex-col sm:items-end gap-2 text-sm sm:text-base">
-                      <div className="flex items-center gap-2 text-muted">
-                        <Calendar className="w-4 h-4" />
-                        <span>May 2025</span>
+
+            {/* Right Column - Timeline Cards */}
+            <div className="lg:col-span-8 flex flex-col gap-8">
+               {/* Role 1 */}
+               <div className="group relative pl-8 border-l-2 border-border/50 hover:border-primary/50 transition-colors duration-300">
+                  <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary ring-4 ring-bg transition-transform group-hover:scale-110" />
+                  
+                  <div className="soft-card rounded-2xl p-6 sm:p-8 hover-lift transition-all duration-300">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
+                        <div>
+                           <h3 className="text-xl sm:text-2xl font-bold text-text mb-1">
+                             Platform Engineering Intern
+                           </h3>
+                           <h4 className="text-lg sm:text-xl text-primary font-semibold">
+                             Lightbeam.ai
+                           </h4>
+                        </div>
+                         <div className="flex flex-col sm:items-end gap-1 text-sm text-muted mt-2 sm:mt-0">
+                            <span className="flex items-center gap-2"><Calendar className="w-4 h-4" /> April 2025 - Present</span>
+                            <span className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Hybrid</span>
+                         </div>
                       </div>
-                      <div className="flex items-center gap-2 text-muted">
-                        <MapPin className="w-4 h-4" />
-                        <span>Remote</span>
+
+                      <div className="space-y-4 mb-6">
+                          <h5 className="font-semibold text-text border-b border-border/50 pb-2 inline-block">Key Contributions</h5>
+                           <ul className="space-y-3">
+                              {[
+                                "Developed & maintained CI/CD pipelines using Jenkins & GitLab CI, reducing deployment time by 20%",
+                                "Implemented infrastructure as code using Terraform and GKE for AWS cloud resources",
+                                "Containerized applications using Docker and orchestrated with Kubernetes, improving scalability",
+                                "Set up monitoring and managment systems using Teleport for resource accessing in environments",
+                                "Collaborated with development teams to optimize application performance and reliability",
+                              ].map((contribution, index) => (
+                                <li key={index} className="flex items-start gap-3 text-muted">
+                                  <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
+                                  <span>{contribution}</span>
+                                </li>
+                              ))}
+                           </ul>
                       </div>
-                    </div>
+
+                      <div className="flex flex-wrap gap-2">
+                        {[
+                          "AWS",
+                          "Docker",
+                          "Kubernetes",
+                          "Terraform",
+                          "Jenkins",
+                          "GKE",
+                          "Helm",
+                        ].map((tech) => (
+                          <span
+                            key={tech}
+                            className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium border border-primary/20"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                   </div>
-                  <div className="mb-6">
-                    <h5 className="font-semibold text-text mb-3">
-                      Training Highlights:
-                    </h5>
-                    <ul className="space-y-3">
-                      {[
-                        "Completed comprehensive training on Workday HCM modules including Core HCM, Recruiting, etc.",
-                        "Gained expertise in VNDLY (Vendor Management System) for contingent workforce management",
-                        "Learned integration patterns between Workday and third-party systems using APIs and web services",
-                        "Developed skills in report building, calculated fields, and business process configuration",
-                      ].map((highlight, index) => (
-                        <li key={index} className="flex items-start gap-3">
-                          <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="text-muted">{highlight}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      "Workday HCM",
-                      "VNDLY",
-                      "API Integration",
-                      "Business Process",
-                      "Reporting",
-                    ].map((skill) => (
-                      <span
-                        key={skill}
-                        className="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium border border-secondary/20"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+               </div>
+
+               {/* Role 2 */}
+                <div className="group relative pl-8 border-l-2 border-border/50 hover:border-secondary/50 transition-colors duration-300">
+                   <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-secondary ring-4 ring-bg transition-transform group-hover:scale-110" />
+
+                  <div className="soft-card rounded-2xl p-6 sm:p-8 hover-lift transition-all duration-300">
+                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
+                        <div>
+                           <h3 className="text-xl sm:text-2xl font-bold text-text mb-1">
+                             Workday HCM + VNDLY Training
+                           </h3>
+                           <h4 className="text-lg sm:text-xl text-secondary font-semibold">
+                             Lightbeam.ai
+                           </h4>
+                        </div>
+                         <div className="flex flex-col sm:items-end gap-1 text-sm text-muted mt-2 sm:mt-0">
+                            <span className="flex items-center gap-2"><Calendar className="w-4 h-4" /> May 2025</span>
+                            <span className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Remote</span>
+                         </div>
+                      </div>
+
+                      <div className="space-y-4 mb-6">
+                          <h5 className="font-semibold text-text border-b border-border/50 pb-2 inline-block">Training Highlights</h5>
+                           <ul className="space-y-3">
+                              {[
+                                "Completed comprehensive training on Workday HCM modules including Core HCM, Recruiting, etc.",
+                                "Gained expertise in VNDLY (Vendor Management System) for contingent workforce management",
+                                "Learned integration patterns between Workday and third-party systems using APIs and web services",
+                                "Developed skills in report building, calculated fields, and business process configuration",
+                              ].map((highlight, index) => (
+                                <li key={index} className="flex items-start gap-3 text-muted">
+                                  <div className="w-1.5 h-1.5 bg-secondary rounded-full mt-2 flex-shrink-0" />
+                                  <span>{highlight}</span>
+                                </li>
+                              ))}
+                           </ul>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2">
+                        {[
+                          "Workday HCM",
+                          "VNDLY",
+                          "API Integration",
+                          "Business Process",
+                          "Reporting",
+                        ].map((skill) => (
+                          <span
+                            key={skill}
+                            className="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-medium border border-secondary/20"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
                   </div>
                 </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-16 sm:py-20 bg-surface/50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text mb-4">
+      <section id="skills" className="py-24 sm:py-32 bg-surface/50 relative overflow-hidden">
+         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent opacity-50" />
+         
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16 sm:mb-24">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text mb-6">
               Skills & Technologies
             </h2>
-            <p className="text-lg sm:text-xl text-muted">
-              My technical expertise and proficiencies.
+            <p className="text-xl text-muted max-w-2xl mx-auto">
+              A curated list of my technical expertise and the tools I use to build digital products.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {skillCategories.map((category, index) => (
               <div
                 key={category.title}
-                className="soft-card rounded-2xl p-6 sm:p-8 hover-lift transition-all duration-300"
+                className={`soft-card rounded-3xl p-8 hover-lift transition-all duration-300 ${index === 0 ? 'md:col-span-2 lg:col-span-1' : ''}`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="flex items-center gap-4 mb-6">
+                <div className="flex items-center gap-4 mb-8">
                   <div
-                    className={`p-3 rounded-full ${getColorClasses(
+                    className={`p-4 rounded-2xl ${getColorClasses(
                       category.color
                     )}`}
                   >
                     {category.icon}
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-text">
+                  <h3 className="text-2xl font-bold text-text">
                     {category.title}
                   </h3>
                 </div>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-x-3 gap-y-4">
                   {category.skills.map((skill) => (
                     <span
                       key={skill}
-                      className={`px-4 py-2 rounded-full text-sm font-medium border transition-all duration-200 hover:scale-105 ${getColorClasses(
+                      className={`px-4 py-2 rounded-xl text-sm font-medium border transition-all duration-200 hover:scale-105 hover:shadow-sm cursor-default ${getColorClasses(
                         category.color
                       )}`}
                     >
@@ -638,85 +672,104 @@ export default function HomePage() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="section-padding">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text mb-4">
+      <section id="projects" className="section-padding relative">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent opacity-50" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20 sm:mb-32">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text mb-6">
               Projects
             </h2>
-            <p className="text-lg sm:text-xl text-muted">
+            <p className="text-xl text-muted max-w-2xl mx-auto">
               Showcasing innovative solutions and technical expertise.
             </p>
           </div>
-          <div className="space-y-12">
+
+          <div className="space-y-32">
             {projects.map((project, index) => (
               <div
                 key={project.title}
-                className="soft-card rounded-2xl overflow-hidden hover-lift transition-all duration-300"
-                style={{ animationDelay: `${index * 200}ms` }}
+                className={`flex flex-col gap-12 lg:gap-20 ${
+                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                } items-center`}
               >
-                <div className="p-6 sm:p-8 lg:p-12">
-                  <div className="flex items-center gap-4 mb-4">
-                    <h3 className="text-2xl sm:text-3xl font-bold text-primary">
-                      {project.title}
-                    </h3>
-                  </div>
-                  <p className="text-text text-base sm:text-lg leading-relaxed mb-6">
+                {/* Text Content */}
+                <div className="flex-1 lg:w-5/12">
+                   <div className="flex items-center gap-4 mb-6">
+                      <div className="w-12 h-1 bg-primary rounded-full" />
+                      <span className="text-primary font-bold uppercase tracking-wider text-sm">Featured Project</span>
+                   </div>
+                  
+                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text mb-6">
+                    {project.title}
+                  </h3>
+                  <p className="text-lg text-muted leading-relaxed mb-8 text-balance">
                     {project.description}
                   </p>
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-text mb-3">
-                      Key Features:
-                    </h4>
-                    <ul className="space-y-2">
-                      {project.features.map((feature, featureIndex) => (
-                        <li
-                          key={featureIndex}
-                          className="flex items-start gap-3"
-                        >
-                          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="text-muted">{feature}</span>
+                  
+                  <div className="mb-8">
+                    <h4 className="text-text font-semibold mb-4">Key Features</h4>
+                    <ul className="space-y-3">
+                      {project.features.slice(0, 4).map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start gap-3 text-muted group">
+                           <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary group-hover:bg-accent transition-colors duration-300" />
+                          <span className="group-hover:text-text transition-colors duration-300">{feature}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
-                  <div className="mb-8">
-                    <h4 className="font-semibold text-text mb-3">
-                      Tech Stack:
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.techStack.map((tech) => (
-                        <span
-                          key={tech}
-                          className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium border border-primary/20"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap gap-4">
-                    <a
+
+                  <div className="flex flex-wrap gap-4 pt-4">
+                     <a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 bg-primary text-bg px-5 py-2.5 sm:px-6 sm:py-3 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg shadow-primary/20"
-                    >
-                      <Github className="w-5 h-5" />
-                      <span>View Code</span>
-                    </a>
-                    {project.liveUrl && (
+                      className="inline-flex items-center gap-2 bg-text text-bg px-6 py-3 rounded-full font-medium hover:bg-primary hover:text-white transition-all duration-300 shadow-lg" 
+                     >
+                       <Github className="w-5 h-5" />
+                       <span>Source Code</span>
+                     </a>
+                     {project.liveUrl && (
                       <a
                         href={project.liveUrl}
-                        target="_blank"
+                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 bg-surface text-text border border-border px-5 py-2.5 sm:px-6 sm:py-3 rounded-xl hover:bg-card transition-all duration-300 hover:scale-105 shadow-lg"
+                        className="inline-flex items-center gap-2 bg-surface border border-border text-text px-6 py-3 rounded-full font-medium hover:border-primary/50 transition-all duration-300"
                       >
-                        <ExternalLink className="w-5 h-5" />
-                        <span>Live Demo</span>
+                         <ExternalLink className="w-5 h-5" />
+                         <span>Live Demo</span>
                       </a>
-                    )}
+                     )}
                   </div>
+                </div>
+
+                {/* Visual / Tech Stack Showcase (Replacing Image placeholder with abstract representation) */}
+                <div className="flex-1 lg:w-7/12 w-full">
+                   <div className="relative group perspective-1000">
+                      {/* Abstract Card Stack Effect */}
+                      <div className="absolute inset-0 bg-primary/20 rounded-3xl transform rotate-3 scale-95 opacity-50 transition-transform duration-500 group-hover:rotate-6 sm:block hidden" />
+                      <div className="absolute inset-0 bg-secondary/20 rounded-3xl transform -rotate-3 scale-95 opacity-50 transition-transform duration-500 group-hover:-rotate-6 sm:block hidden" />
+                      
+                      <div className="relative bg-surface rounded-3xl border border-border p-8 sm:p-12 shadow-2xl overflow-hidden hover:border-primary/30 transition-colors duration-500">
+                          {/* Decorative Background Mesh */}
+                          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10" />
+                          <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/5 rounded-full blur-3xl -z-10" />
+
+                          <div className="mb-8">
+                             <h4 className="text-sm uppercase tracking-widest text-muted font-bold mb-6">Technology Stack</h4>
+                             <div className="flex flex-wrap gap-3">
+                                {project.techStack.map((tech) => (
+                                  <span
+                                    key={tech}
+                                    className="px-4 py-2 bg-bg rounded-lg text-sm font-medium border border-border shadow-sm"
+                                  >
+                                    {tech}
+                                  </span>
+                                ))}
+                             </div>
+                          </div>
+                      </div>
+                   </div>
                 </div>
               </div>
             ))}
@@ -725,7 +778,9 @@ export default function HomePage() {
       </section>
 
       {/* Certificates Section */}
-      <section id="certificates" className="section-padding bg-surface/30">
+      <section id="certificates" className="section-padding bg-surface/30 relative">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent opacity-50" />
+        
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text mb-4">
@@ -805,7 +860,9 @@ export default function HomePage() {
       </section>
 
       {/* Achievements Section */}
-      <section id="achievements" className="section-padding">
+      <section id="achievements" className="section-padding relative">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent opacity-50" />
+        
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text mb-4">
@@ -880,7 +937,9 @@ export default function HomePage() {
       </section>
 
       {/* Extra-Curricular Section */}
-      <section id="extra-curricular" className="section-padding bg-surface/30">
+      <section id="extra-curricular" className="section-padding bg-surface/30 relative">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent opacity-50" />
+        
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text mb-4">

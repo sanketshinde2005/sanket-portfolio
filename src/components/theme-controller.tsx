@@ -62,7 +62,7 @@ export default function ThemeController() {
         </button>
 
         {/* Dropdown */}
-        <div className="absolute right-0 mt-2 w-40 py-2 rounded-lg bg-surface border border-border shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+        <div className="absolute right-0 bottom-full mb-2 sm:bottom-auto sm:top-full sm:mt-2 w-40 py-2 rounded-lg bg-surface border border-border shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
           <button
             onClick={() => setTheme("aurora")}
             className={`w-full px-4 py-2 text-left text-sm hover:bg-card transition-colors ${
