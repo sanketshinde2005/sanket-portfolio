@@ -3,6 +3,53 @@ import { ExternalLink, Github, Globe } from "lucide-react";
 export default function ProjectsPage() {
   const projects = [
     {
+      title: "NexJob",
+      description:
+        "A modern job portal platform that streamlines the hiring process for both job seekers and employers, featuring AI-powered job matching and comprehensive applicant tracking.",
+      techStack: [
+        "React",
+        "TypeScript",
+        "MongoDB",
+        "Mongoose",
+        "NextAuth.js",
+        "Tailwind CSS",
+        "Vercel",
+      ],
+      features: [
+        "AI-powered job recommendation system",
+        "Advanced search and filtering options",
+        "Applicant tracking system (ATS)",
+        "Real-time notifications",
+        "Company profiles and reviews",
+      ],
+      githubUrl: "https://github.com/sanketshinde/nexjob",
+      liveUrl: "nexjob-1ioj.onrender.com/",
+      color: "purple",
+    },
+    {
+      title: "SkillSwap",
+      description:
+        "SkillSwap is a student-driven platform where learners exchange skills, collaborate on real knowledge, and grow together.",
+      techStack: [
+        "Spring Boot",
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "NextAuth.js",
+        "Tailwind CSS",
+      ],
+      features: [
+        "AI-powered job recommendation system",
+        "Advanced search and filtering options",
+        "Applicant tracking system (ATS)",
+        "Real-time notifications",
+        "Company profiles and reviews",
+      ],
+      githubUrl: "https://github.com/sanketshinde2005/SkillSwap",
+      liveUrl: "https://skillswap-sigma-swart.vercel.app/",
+      color: "purple",
+    },
+    {
       title: "Wellify",
       description:
         "A comprehensive healthcare management platform that connects patients with healthcare providers, featuring appointment scheduling, medical records management, and telemedicine capabilities.",
@@ -49,30 +96,6 @@ export default function ProjectsPage() {
       githubUrl: "https://github.com/sanketshinde/py-gpt",
       liveUrl: "https://py-gpt-demo.vercel.app",
       color: "green",
-    },
-    {
-      title: "NexJob",
-      description:
-        "A modern job portal platform that streamlines the hiring process for both job seekers and employers, featuring AI-powered job matching and comprehensive applicant tracking.",
-      techStack: [
-        "Next.js",
-        "TypeScript",
-        "PostgreSQL",
-        "Prisma",
-        "NextAuth.js",
-        "Tailwind CSS",
-        "Vercel",
-      ],
-      features: [
-        "AI-powered job recommendation system",
-        "Advanced search and filtering options",
-        "Applicant tracking system (ATS)",
-        "Real-time notifications",
-        "Company profiles and reviews",
-      ],
-      githubUrl: "https://github.com/sanketshinde/nexjob",
-      liveUrl: "https://nexjob-demo.vercel.app",
-      color: "purple",
     },
   ];
 
