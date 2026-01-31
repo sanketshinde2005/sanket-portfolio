@@ -18,6 +18,7 @@ import {
 import TechStackIcons from "@/components/tech-stack-icons";
 import SkillsSection from "@/components/skills-section";
 import HeroBackgroundWrapper from "@/components/hero-background-wrapper";
+import BackToTop from "@/components/back-to-top";
 
 export default function HomePage() {
   const projects = [
@@ -1016,6 +1017,7 @@ export default function HomePage() {
           </p>
         </div>
       </footer>
+      <BackToTop />
     </div>
   );
 }
