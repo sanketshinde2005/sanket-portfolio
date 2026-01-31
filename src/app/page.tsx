@@ -238,16 +238,7 @@ export default function HomePage() {
               Upcoming Summer&apos;26 Intern @Barclays
             </p>
             <p className="text-base sm:text-lg text-muted max-w-2xl mx-auto leading-relaxed animate-fade-in-delay-2 px-4 sm:px-0">
-              Hello everyone, I am Sanket Shinde. I am an Engineering
-              Undergraduate specializing in Information Technology at Pune
-              Institute of Computer Technology. A strong academic performer,
-              also deeply passionate about Data Structures and Algorithms (DSA)
-              and continuously improving my skills in web development. I am also
-              keenly exploring the fields of Artificial Intelligence and Machine
-              Learning (AI/ML), along with a growing interest in DevOps and
-              cloud-native technologies. Always eager to learn and take on new
-              challenges, I aim to build impactful tech solutions and grow as a
-              well-rounded developer.
+              Hello everyone, I’m Sanket Shinde, an Engineering Undergraduate in Information Technology at Pune Institute of Computer Technology (PICT). I am passionate about Data Structures and Algorithms and continuously strengthening my problem-solving skills. I am a MERN Stack Developer with experience in React, Node.js, and Express, along with working knowledge of Spring and Spring Boot. I am also exploring AI/ML, and developing an interest in DevOps, cloud-native technologies, and system design to build scalable, real-world software solutions. Always eager to learn and take on new challenges, I strive to grow as a well-rounded software engineer and create impactful tech solutions.
             </p>
           </div>
 
@@ -674,9 +665,6 @@ export default function HomePage() {
                         <h4 className="text-2xl font-bold text-text mb-2">
                           Tech Stack Visualized
                         </h4>
-                        <p className="text-muted">
-                          Interactive technology showcase
-                        </p>
                       </div>
 
                       <div className="flex justify-center">

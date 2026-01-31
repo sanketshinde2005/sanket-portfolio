@@ -2,6 +2,7 @@
 
 import { Code, Cloud, Database, Cpu, Palette, Server } from "lucide-react";
 import TechStackIcons from "./tech-stack-icons";
+import SkillsGlobe from "./skills-globe";
 
 const skillCategories = [
   {
@@ -154,114 +155,163 @@ export default function SkillsSection() {
             </p>
           </div>
 
-          <div className="soft-card rounded-3xl p-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div>
-                <h4 className="text-lg font-semibold text-primary mb-4 flex items-center gap-2">
-                  <Code className="w-5 h-5" /> Programming & DSA
-                </h4>
-                <TechStackIcons
-                  technologies={[
-                    "Java",
-                    "C++",
-                    "Python",
-                    "JavaScript",
-                    "TypeScript",
-                    "SQL",
-                  ]}
-                  size={18}
-                  showNames={true}
-                />
-              </div>
+          <div className="flex flex-col lg:flex-row gap-8 items-stretch">
+            {/* Interactive 3D Globe - Comprehensive Showcase */}
+            <div className="lg:w-5/12 order-2 lg:order-1">
+              <SkillsGlobe
+                technologies={[
+                  "Java",
+                  "C++",
+                  "Python",
+                  "JavaScript",
+                  "TypeScript",
+                  "SQL",
+                  "React",
+                  "Next.js",
+                  "Tailwind CSS",
+                  "Ant Design",
+                  "Bootstrap",
+                  "DaisyUI",
+                  "Spring Boot",
+                  "Node.js",
+                  "Express.js",
+                  "Flask",
+                  "NumPy",
+                  "Pandas",
+                  "TensorFlow",
+                  "PyTorch",
+                  "Scikit-learn",
+                  "OpenCV",
+                  "Docker",
+                  "Kubernetes",
+                  "AWS",
+                  "GCP",
+                  "Azure",
+                  "Jenkins",
+                  "Terraform",
+                  "MongoDB",
+                  "PostgreSQL",
+                  "MySQL",
+                  "Git",
+                  "Figma",
+                  "VS Code",
+                  "Postman",
+                ]}
+              />
+            </div>
 
-              <div>
-                <h4 className="text-lg font-semibold text-secondary mb-4 flex items-center gap-2">
-                  <Palette className="w-5 h-5" /> Frontend Tech
-                </h4>
-                <TechStackIcons
-                  technologies={[
-                    "React",
-                    "Next.js",
-                    "Tailwind CSS",
-                    "Ant Design",
-                    "Bootstrap",
-                    "DaisyUI",
-                  ]}
-                  size={18}
-                  showNames={true}
-                />
-              </div>
+            {/* Categorized Lists */}
+            <div className="flex-1 lg:w-7/12 order-1 lg:order-2">
+              <div className="soft-card rounded-3xl p-6 sm:p-8 h-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <h4 className="text-lg font-semibold text-primary mb-4 flex items-center gap-2">
+                      <Code className="w-5 h-5" /> Programming & DSA
+                    </h4>
+                    <TechStackIcons
+                      technologies={[
+                        "Java",
+                        "C++",
+                        "Python",
+                        "JavaScript",
+                        "TypeScript",
+                        "SQL",
+                      ]}
+                      size={18}
+                      showNames={true}
+                    />
+                  </div>
 
-              <div>
-                <h4 className="text-lg font-semibold text-accent mb-4 flex items-center gap-2">
-                  <Server className="w-5 h-5" /> Backend Tech
-                </h4>
-                <TechStackIcons
-                  technologies={[
-                    "Spring Boot",
-                    "Node.js",
-                    "Express.js",
-                    "Flask",
-                  ]}
-                  size={18}
-                  showNames={true}
-                />
-              </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-secondary mb-4 flex items-center gap-2">
+                      <Palette className="w-5 h-5" /> Frontend Tech
+                    </h4>
+                    <TechStackIcons
+                      technologies={[
+                        "React",
+                        "Next.js",
+                        "Tailwind CSS",
+                        "Ant Design",
+                        "Bootstrap",
+                        "DaisyUI",
+                      ]}
+                      size={18}
+                      showNames={true}
+                    />
+                  </div>
 
-              <div>
-                <h4 className="text-lg font-semibold text-pink-500 mb-4 flex items-center gap-2">
-                  <Cpu className="w-5 h-5" /> AI/ML
-                </h4>
-                <TechStackIcons
-                  technologies={[
-                    "NumPy",
-                    "Pandas",
-                    "TensorFlow",
-                    "PyTorch",
-                    "Scikit-learn",
-                    "OpenCV",
-                  ]}
-                  size={18}
-                  showNames={true}
-                />
-              </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-accent mb-4 flex items-center gap-2">
+                      <Server className="w-5 h-5" /> Backend Tech
+                    </h4>
+                    <TechStackIcons
+                      technologies={[
+                        "Spring Boot",
+                        "Node.js",
+                        "Express.js",
+                        "Flask",
+                      ]}
+                      size={18}
+                      showNames={true}
+                    />
+                  </div>
 
-              <div>
-                <h4 className="text-lg font-semibold text-orange-500 mb-4 flex items-center gap-2">
-                  <Cloud className="w-5 h-5" /> DevOps & Cloud
-                </h4>
-                <TechStackIcons
-                  technologies={[
-                    "Docker",
-                    "Kubernetes",
-                    "AWS",
-                    "GCP",
-                    "Azure",
-                    "Jenkins",
-                    "Terraform",
-                  ]}
-                  size={18}
-                  showNames={true}
-                />
-              </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-pink-500 mb-4 flex items-center gap-2">
+                      <Cpu className="w-5 h-5" /> AI/ML
+                    </h4>
+                    <TechStackIcons
+                      technologies={[
+                        "NumPy",
+                        "Pandas",
+                        "TensorFlow",
+                        "PyTorch",
+                        "Scikit-learn",
+                        "OpenCV",
+                      ]}
+                      size={18}
+                      showNames={true}
+                    />
+                  </div>
 
-              <div>
-                <h4 className="text-lg font-semibold text-indigo-500 mb-4 flex items-center gap-2">
-                  <Database className="w-5 h-5" /> Databases & Tools
-                </h4>
-                <TechStackIcons
-                  technologies={[
-                    "MongoDB",
-                    "PostgreSQL",
-                    "MySQL",
-                    "Git",
-                    "Figma",
-                    "VS Code",
-                    "Postman",
-                  ]}
-                  size={18}
-                  showNames={true}
-                />
+                  <div>
+                    <h4 className="text-lg font-semibold text-orange-500 mb-4 flex items-center gap-2">
+                      <Cloud className="w-5 h-5" /> DevOps & Cloud
+                    </h4>
+                    <TechStackIcons
+                      technologies={[
+                        "Docker",
+                        "Kubernetes",
+                        "AWS",
+                        "GCP",
+                        "Azure",
+                        "Jenkins",
+                        "Terraform",
+                      ]}
+                      size={18}
+                      showNames={true}
+                    />
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-semibold text-indigo-500 mb-4 flex items-center gap-2">
+                      <Database className="w-5 h-5" /> Databases & Tools
+                    </h4>
+                    <TechStackIcons
+                      technologies={[
+                        "MongoDB",
+                        "PostgreSQL",
+                        "MySQL",
+                        "Git",
+                        "Figma",
+                        "VS Code",
+                        "Postman",
+                      ]}
+                      size={18}
+                      showNames={true}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
