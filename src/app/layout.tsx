@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
+import PerformanceWrapper from "@/components/performance-wrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,10 +19,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth" data-theme="aurora" data-mode="dark">
+    <html
+      lang="en"
+      className="scroll-smooth"
+      data-theme="aurora"
+      data-mode="dark"
+    >
       <body className={inter.className}>
-        <Navbar />
-        <main>{children}</main>
+        <PerformanceWrapper>
+          <Navbar />
+          <main>{children}</main>
+        </PerformanceWrapper>
       </body>
     </html>
   );
