@@ -1,4 +1,4 @@
-# 🚀 Sanket Shinde - Professional Portfolio
+# Sanket Shinde - Portfolio
 
 <p align="center">
   <img src="https://img.shields.io/badge/Next.js-15.4-black?style=for-the-badge&logo=next.js" alt="Next.js" />
@@ -86,11 +86,11 @@ src/
   <a href="https://github.com/sanketshinde2005" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
-  <a href="https://linkedin.com/in/sanketshinde2005" target="_blank">
+  <a href="https://www.linkedin.com/in/sanket-shinde-067650288/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
 </p>
 
 ---
 
-Built with passion and ❤️ by **Sanket Shinde**. Feel free to explore, fork, and use this for your own inspiration!
+Built with passion and ❤️ by **Sanket Shinde**. Feel free to explore, fork, and use!
