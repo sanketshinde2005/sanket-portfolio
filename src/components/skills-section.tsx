@@ -145,7 +145,7 @@ export default function SkillsSection() {
         </div>
 
         {/* Additional Tech Stack in a grid layout */}
-        <div className="mt-20">
+        <div className="mt-20 hidden md:block">
           <div className="text-center mb-12">
             <h3 className="text-2xl sm:text-3xl font-bold text-text mb-4">
               Complete Tech Stack Overview
