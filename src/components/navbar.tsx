@@ -45,7 +45,7 @@ const navigation = [
   },
   {
     id: "extra-curricular",
-    name: "Extra-Curricular",
+    name: "Activities",
     href: "#extra-curricular",
     icon: Users,
   },

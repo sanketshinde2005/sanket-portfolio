@@ -15,6 +15,7 @@ import {
   Heart,
   ExternalLink,
 } from "lucide-react";
+import Image from "next/image";
 import TechStackIcons from "@/components/tech-stack-icons";
 import SkillsSection from "@/components/skills-section";
 import HeroBackgroundWrapper from "@/components/hero-background-wrapper";
@@ -44,6 +45,7 @@ export default function HomePage() {
       githubUrl: "https://github.com/sanketshinde2005/SkillSwap",
       liveUrl: "https://skillswap-sigma-swart.vercel.app/",
       color: "red",
+      image: "/projects/skillswap.png",
     },
     {
       title: "NexJob",
@@ -68,6 +70,7 @@ export default function HomePage() {
       githubUrl: "https://github.com/Rishabh-0615/NeXJob",
       liveUrl: "https://nexjob-1ioj.onrender.com/",
       color: "purple",
+      image: "/projects/nexjob.jpg",
     },
     {
       title: "Wellify",
@@ -92,6 +95,7 @@ export default function HomePage() {
       githubUrl: "https://github.com/sanketshinde2005/Wellify",
       liveUrl: "",
       color: "blue",
+      image: "/projects/wellify.jpg",
     },
     {
       title: "Py-GPT",
@@ -116,6 +120,7 @@ export default function HomePage() {
       githubUrl: "https://github.com/sanketshinde2005/Py-GPT",
       liveUrl: "",
       color: "green",
+      image: "/projects/pygpt.png",
     },
   ];
 
@@ -655,9 +660,20 @@ export default function HomePage() {
                     <div className="absolute inset-0 bg-secondary/20 rounded-3xl transform -rotate-3 scale-95 opacity-50 transition-transform duration-500 group-hover:-rotate-6 sm:block hidden" />
 
                     <div className="relative bg-surface rounded-3xl border border-border p-8 sm:p-12 shadow-2xl overflow-hidden hover:border-primary/30 transition-colors duration-500 group-hover:shadow-primary/10">
-                      {/* Decorative Background Mesh */}
                       <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10" />
                       <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/5 rounded-full blur-3xl -z-10" />
+
+                      {/* Project Image Panel */}
+                      <div className="relative w-full aspect-video mb-8 rounded-2xl overflow-hidden border border-border/50 shadow-inner group/image">
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover/image:scale-110"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-bg/20 to-transparent opacity-60" />
+                      </div>
 
                       <div className="text-center mb-8">
                         <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-primary/10 mb-6">
