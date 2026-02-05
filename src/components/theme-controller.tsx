@@ -42,7 +42,7 @@ export default function ThemeController() {
       case "aurora": return "Aurora";
       case "royal": return "Royal";
       case "original": return "Professional";
-      case "mint": return "Neo Mint";
+      case "mint": return "NeoMint";
       default: return t;
     }
   };
@@ -93,7 +93,7 @@ export default function ThemeController() {
               theme === "mint" ? "text-primary" : "text-text"
             }`}
           >
-            Neo Mint
+            NeoMint
           </button>
         </div>
       </div>

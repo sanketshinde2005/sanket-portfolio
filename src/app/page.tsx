@@ -233,18 +233,29 @@ export default function HomePage() {
         <HeroBackgroundWrapper />
 
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 text-center relative z-10">
+          <div className="flex justify-center mb-8 mt-0 animate-fade-in ">
+            <div className="relative w-32 h-32 sm:w-40 sm:h-40 aspect-square group translate-y-2">
+              <Image
+                src="/me.jpeg"
+                alt="Sanket Shinde"
+                fill
+                className="rounded-full object-cover border-4 border-primary/30 shadow-xl hover:scale-105 transition-transform duration-300 pointer-events-auto"
+                priority
+                sizes="(max-width: 640px) 128px, 160px"
+              />
+              <div className="absolute inset-0 rounded-full border border-primary/10 -z-10 group-hover:scale-110 transition-transform duration-500" />
+            </div>
+          </div>
+
           <div className="mb-6 sm:mb-8">
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-text mb-4 animate-fade-in tracking-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-text mb-4 animate-fade-in tracking-tight">
               Sanket Shinde
             </h1>
             <p className="text-xl sm:text-2xl text-primary font-medium mb-3 sm:mb-6 animate-fade-in-delay-1">
               Software Engineering Student
             </p>
-            <p className="text-lg sm:text-xl text-primary/80 font-medium mb-6 animate-fade-in-delay-1">
-              Upcoming Summer&apos;26 Intern @Barclays
-            </p>
             <p className="text-base sm:text-lg text-muted max-w-2xl mx-auto leading-relaxed animate-fade-in-delay-2 px-4 sm:px-0">
-              Hello everyone, I’m Sanket Shinde, an Engineering Undergraduate in Information Technology at Pune Institute of Computer Technology (PICT). I am passionate about Data Structures and Algorithms and continuously strengthening my problem-solving skills. I am a MERN Stack Developer with experience in React, Node.js, and Express, along with working knowledge of Spring and Spring Boot. I am also exploring AI/ML, and developing an interest in DevOps, cloud-native technologies, and system design to build scalable, real-world software solutions. Always eager to learn and take on new challenges, I strive to grow as a well-rounded software engineer and create impactful tech solutions.
+              Hello everyone, I’m Sanket Shinde, an Engineering Undergraduate in Information Technology at Pune Institute of Computer Technology (PICT). I’m passionate about Data Structures and Algorithms & continuously strengthening my problem-solving skills. I’m a MERN Stack Developer with hands-on experience in React, Node.js, and Express, along with working knowledge of Spring & Spring Boot. Also exploring AI/ML and developing an interest in DevOps, cloud-native technologies, and system design to build scalable real-world software solutions.
             </p>
           </div>
 
