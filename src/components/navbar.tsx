@@ -12,6 +12,7 @@ import {
   Award,
   Trophy,
   Users,
+  FileText,
 } from "lucide-react";
 import ThemeController from "./theme-controller";
 
@@ -48,6 +49,13 @@ const navigation = [
     name: "Activities",
     href: "#extra-curricular",
     icon: Users,
+  },
+  {
+    id: "resume",
+    name: "Resume",
+    href: "/resume/resume.pdf",
+    icon: FileText,
+    external: true,
   },
 ];
 
@@ -97,10 +105,10 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center">
+          <div className="flex-shrink-0 flex items-center xl:flex-1 min-w-fit">
             <a
               href="#home"
-              className="flex items-center gap-2 sm:gap-3 group"
+              className="flex items-center gap-2 sm:gap-3 group whitespace-nowrap"
               onClick={(e) => {
                 e.preventDefault();
                 handleLinkClick("#home");
@@ -109,14 +117,14 @@ export default function Navbar() {
               <div className="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary font-bold text-lg border border-primary/20 transition-transform group-hover:scale-110">
                 SS
               </div>
-              <span className="text-sm font-medium text-text tracking-wide group-hover:text-primary transition-colors">
+              <span className="text-sm font-medium text-text tracking-wide group-hover:text-primary transition-colors whitespace-nowrap">
                 Sanket Shinde
               </span>
             </a>
           </div>
 
           {/* Desktop Navigation - Centered */}
-          <div className="hidden xl:flex items-center justify-center flex-1 px-8">
+          <div className="hidden xl:flex items-center justify-center px-4">
             <div className="flex items-center gap-1 sm:gap-2">
               {navigation.map((item) => {
                 const Icon = item.icon;
@@ -125,14 +133,18 @@ export default function Navbar() {
                   <a
                     key={item.name}
                     href={item.href}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm transition-all duration-300 ${
+                    target={item.external ? "_blank" : undefined}
+                    rel={item.external ? "noopener noreferrer" : undefined}
+                    className={`flex items-center gap-2 px-3 py-2 rounded-full text-sm transition-all duration-300 ${
                       isActive
                         ? "text-primary bg-primary/15 font-bold shadow-sm ring-1 ring-primary/20"
                         : "text-muted font-medium hover:text-primary hover:bg-primary/5"
                     }`}
                     onClick={(e) => {
-                      e.preventDefault();
-                      handleLinkClick(item.href);
+                      if (!item.external) {
+                        e.preventDefault();
+                        handleLinkClick(item.href);
+                      }
                     }}
                   >
                     <Icon className={`w-4 h-4 ${isActive ? "text-primary" : "text-muted group-hover:text-primary"}`} />
@@ -143,7 +155,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex-shrink-0 flex items-center gap-4 xl:flex-1 xl:justify-end min-w-fit">
             <div className="hidden lg:block">
               <ThemeController />
             </div>
@@ -176,9 +188,13 @@ export default function Navbar() {
                   <a
                     key={item.name}
                     href={item.href}
+                    target={item.external ? "_blank" : undefined}
+                    rel={item.external ? "noopener noreferrer" : undefined}
                     onClick={(e) => {
-                      e.preventDefault();
-                      handleLinkClick(item.href);
+                      if (!item.external) {
+                        e.preventDefault();
+                        handleLinkClick(item.href);
+                      }
                     }}
                     className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                       isActive

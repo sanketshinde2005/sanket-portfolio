@@ -14,6 +14,7 @@ import {
   Trophy,
   Heart,
   ExternalLink,
+  FileText,
 } from "lucide-react";
 import Image from "next/image";
 import TechStackIcons from "@/components/tech-stack-icons";
@@ -282,6 +283,15 @@ export default function HomePage() {
             </div>
 
             <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+              <a
+                href="/resume/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-secondary text-bg px-6 py-3 rounded-xl font-medium hover:bg-secondary/90 transition-all duration-300 hover:scale-105 shadow-lg shadow-secondary/20"
+              >
+                <FileText className="w-5 h-5" />
+                <span>Resume</span>
+              </a>
               <a
                 href="https://www.linkedin.com/in/sanket-shinde-067650288/"
                 target="_blank"
