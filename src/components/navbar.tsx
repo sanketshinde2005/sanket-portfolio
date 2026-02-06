@@ -105,7 +105,7 @@ export default function Navbar() {
       <div className="max-w-[1440px] mx-auto px-2 sm:px-4">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Zone 1: Logo (Left) */}
-          <div className="flex-1 flex items-center justify-start z-10">
+          <div className="flex items-center justify-start z-10">
             <a
               href="#home"
               className="flex items-center gap-2 sm:gap-3 group whitespace-nowrap"
@@ -124,7 +124,7 @@ export default function Navbar() {
           </div>
 
           {/* Zone 2: Desktop Navigation (Absolute Center relative to Screen/Nav) */}
-          <div className="hidden xl:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center">
+          <div className="hidden xl:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center z-20">
             <div className="flex items-center gap-1 sm:gap-2">
               {navigation
                 .filter((item) => !item.external) // Remove resume from desktop center links
