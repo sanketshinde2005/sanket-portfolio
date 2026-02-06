@@ -1,10 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { Moon, Sun, Palette } from "lucide-react";
-
-type Theme = "aurora" | "royal" | "original" | "mint";
-type Mode = "light" | "dark";
+import { useTheme, type Theme } from "./theme-provider";
 
 interface ThemeControllerProps {
   variant?: "full" | "theme-only" | "mode-only";
@@ -25,35 +22,7 @@ export default function ThemeController({
   hideLabel = false,
   buttonSize = "md"
 }: ThemeControllerProps) {
-  const [theme, setTheme] = useState<Theme>("aurora");
-  const [mode, setMode] = useState<Mode>("dark");
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    // Initial load from local storage
-    const savedTheme = localStorage.getItem("theme") as Theme;
-    const savedMode = localStorage.getItem("mode") as Mode;
-
-    if (savedTheme) setTheme(savedTheme);
-    if (savedMode) setMode(savedMode);
-    
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted) return;
-
-    // Persist to local storage
-    localStorage.setItem("theme", theme);
-    localStorage.setItem("mode", mode);
-
-    // Update document attributes
-    document.documentElement.setAttribute("data-theme", theme);
-    document.documentElement.setAttribute("data-mode", mode);
-  }, [theme, mode, mounted]);
-
-  // Avoid hydration mismatch
-  if (!mounted) return null;
+  const { theme, mode, setTheme, toggleMode } = useTheme();
 
   const getThemeLabel = (t: Theme) => {
     switch (t) {
@@ -128,7 +97,7 @@ export default function ThemeController({
       {/* Mode Toggle */}
       {(variant === "full" || variant === "mode-only") && (
         <button
-          onClick={() => setMode(mode === "dark" ? "light" : "dark")}
+          onClick={toggleMode}
           className={`flex items-center justify-center rounded-lg bg-surface text-text hover:bg-card transition-colors border border-border hover:text-primary ${sizeClasses[buttonSize]}`}
           aria-label="Toggle Dark Mode"
         >

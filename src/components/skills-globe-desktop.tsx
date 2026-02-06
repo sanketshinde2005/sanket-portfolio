@@ -5,6 +5,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Html } from "@react-three/drei";
 import * as THREE from "three";
 import TechStackIcons from "./tech-stack-icons";
+import { useTheme } from "./theme-provider";
 
 interface GlobeProps {
   technologies: string[];
@@ -14,6 +15,7 @@ interface GlobeProps {
 function Globe({ technologies }: { technologies: string[] }) {
   const groupRef = useRef<THREE.Group>(null);
   const radius = 3.5;
+  const { mode } = useTheme();
 
   useFrame(() => {
     if (groupRef.current) {
@@ -43,12 +45,17 @@ function Globe({ technologies }: { technologies: string[] }) {
     return positions;
   }, [technologies, radius]);
 
+  // Use a simplified way to get primary color for the 3D globe
+  // Since we are in Canvas, we can't easily use CSS variables directly in meshBasicMaterial
+  // but we can pass them as props or use a fixed mapping for the globe structure
+  const globeColor = "#5eead4"; // Default aurora primary
+
   return (
     <group ref={groupRef}>
       <mesh>
         <sphereGeometry args={[radius, 32, 32]} />
         <meshBasicMaterial
-          color="#5eead4"
+          color={globeColor}
           wireframe
           transparent
           opacity={0.1}
@@ -58,7 +65,7 @@ function Globe({ technologies }: { technologies: string[] }) {
       <mesh>
         <sphereGeometry args={[radius * 0.98, 32, 32]} />
         <meshBasicMaterial
-          color="#5eead4"
+          color={globeColor}
           transparent
           opacity={0.05}
           side={THREE.BackSide}
@@ -84,16 +91,16 @@ function Globe({ technologies }: { technologies: string[] }) {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              background: "rgba(15, 23, 42, 0.9)",
+              background: mode === 'dark' ? "rgba(15, 23, 42, 0.9)" : "rgba(255, 255, 255, 0.9)",
               borderRadius: "6px",
-              border: "1px solid rgba(94, 234, 212, 0.4)",
+              border: "1px solid var(--primary)",
               backdropFilter: "blur(4px)",
               cursor: "pointer",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "scale(1.5)";
-              e.currentTarget.style.borderColor = "rgba(94, 234, 212, 1)";
-              e.currentTarget.style.boxShadow = "0 0 20px rgba(94, 234, 212, 0.6)";
+              e.currentTarget.style.borderColor = "var(--primary)";
+              e.currentTarget.style.boxShadow = "0 0 20px var(--primary)";
               e.currentTarget.style.zIndex = "10";
             }}
             onMouseLeave={(e) => {
