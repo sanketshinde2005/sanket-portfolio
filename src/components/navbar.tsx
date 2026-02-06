@@ -154,8 +154,8 @@ export default function Navbar() {
           </div>
 
           {/* Zone 3: Actions (Right) */}
-          <div className="flex items-center z-10 ml-auto mr-20">
-            <div className="hidden lg:flex items-center">
+          <div className="flex items-center z-10 ml-auto">
+            <div className="hidden lg:flex items-center lg:mr-20">
               <ThemeController variant="mode-only" buttonSize="md" />
             </div>
 
