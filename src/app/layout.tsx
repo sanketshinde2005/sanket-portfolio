@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
+import Sidebar from "@/components/sidebar";
 import PerformanceWrapper from "@/components/performance-wrapper";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <PerformanceWrapper>
           <Navbar />
+          <Sidebar />
           <main>{children}</main>
         </PerformanceWrapper>
       </body>

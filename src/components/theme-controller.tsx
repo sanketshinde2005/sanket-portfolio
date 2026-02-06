@@ -6,7 +6,25 @@ import { Moon, Sun, Palette } from "lucide-react";
 type Theme = "aurora" | "royal" | "original" | "mint";
 type Mode = "light" | "dark";
 
-export default function ThemeController() {
+interface ThemeControllerProps {
+  variant?: "full" | "theme-only" | "mode-only";
+  className?: string;
+  dropdownSide?: "bottom" | "right";
+  dropdownClassName?: string;
+  showVerticalLabel?: boolean;
+  hideLabel?: boolean;
+  buttonSize?: "sm" | "md" | "lg";
+}
+
+export default function ThemeController({ 
+  variant = "full", 
+  className = "", 
+  dropdownSide = "bottom",
+  dropdownClassName = "",
+  showVerticalLabel = false,
+  hideLabel = false,
+  buttonSize = "md"
+}: ThemeControllerProps) {
   const [theme, setTheme] = useState<Theme>("aurora");
   const [mode, setMode] = useState<Mode>("dark");
   const [mounted, setMounted] = useState(false);
@@ -47,69 +65,80 @@ export default function ThemeController() {
     }
   };
 
-  return (
-    <div className="flex items-center gap-4">
-      {/* Theme Selector */}
-      <div className="relative group">
-        <button
-          className="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface text-text hover:bg-card transition-colors border border-border"
-          aria-label="Select Theme"
-        >
-          <Palette className="w-4 h-4 text-primary" />
-          <span className="text-sm font-medium hidden sm:inline">
-            {getThemeLabel(theme)}
-          </span>
-        </button>
+  const themes: Theme[] = ["aurora", "royal", "original", "mint"];
 
-        {/* Dropdown */}
-        <div className="absolute right-0 bottom-full mb-2 sm:bottom-auto sm:top-full sm:mt-2 w-40 py-2 rounded-lg bg-surface border border-border shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-          <button
-            onClick={() => setTheme("aurora")}
-            className={`w-full px-4 py-2 text-left text-sm hover:bg-card transition-colors ${
-              theme === "aurora" ? "text-primary" : "text-text"
-            }`}
-          >
-            Aurora
-          </button>
-          <button
-            onClick={() => setTheme("royal")}
-            className={`w-full px-4 py-2 text-left text-sm hover:bg-card transition-colors ${
-              theme === "royal" ? "text-primary" : "text-text"
-            }`}
-          >
-            Royal
-          </button>
-          <button
-            onClick={() => setTheme("original")}
-            className={`w-full px-4 py-2 text-left text-sm hover:bg-card transition-colors ${
-              theme === "original" ? "text-primary" : "text-text"
-            }`}
-          >
-            Professional
-          </button>
-          <button
-            onClick={() => setTheme("mint")}
-            className={`w-full px-4 py-2 text-left text-sm hover:bg-card transition-colors ${
-              theme === "mint" ? "text-primary" : "text-text"
-            }`}
-          >
-            NeoMint
-          </button>
+  const dropdownStyles = dropdownSide === "right" 
+    ? "left-full ml-3 top-1/2 -translate-y-1/2" 
+    : "right-0 bottom-full mb-2 lg:bottom-auto lg:top-full lg:mt-2";
+
+  const sizeClasses = {
+    sm: "w-8 h-8",
+    md: "w-10 h-10",
+    lg: "w-11 h-11"
+  };
+
+  return (
+    <div className={`flex items-center gap-4 ${className}`}>
+      {/* Theme Selector */}
+      {(variant === "full" || variant === "theme-only") && (
+        <div className="relative group flex flex-col items-center gap-4">
+          {showVerticalLabel && (
+            <span 
+              className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted/50"
+              style={{
+                writingMode: 'vertical-rl',
+                textOrientation: 'mixed'
+              }}
+            >
+              {getThemeLabel(theme)}
+            </span>
+          )}
+          
+          <div className="relative">
+            <button
+              className={`flex items-center justify-center rounded-lg bg-surface text-text hover:bg-card transition-colors border border-border ${hideLabel ? sizeClasses[buttonSize] : 'gap-2 px-3 py-2'}`}
+              aria-label="Select Theme"
+            >
+              <Palette className="w-4 h-4 text-primary" />
+              {!hideLabel && (
+                <span className="text-sm font-medium hidden sm:inline">
+                  {getThemeLabel(theme)}
+                </span>
+              )}
+            </button>
+
+            {/* Dropdown */}
+            <div className={`absolute py-2 rounded-lg bg-surface border border-border shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 w-40 ${dropdownStyles} ${dropdownClassName}`}>
+              {themes.map((t) => (
+                <button
+                  key={t}
+                  onClick={() => setTheme(t)}
+                  className={`w-full px-4 py-2 text-left text-sm hover:bg-card transition-colors ${
+                    theme === t ? "text-primary" : "text-text"
+                  }`}
+                >
+                  {getThemeLabel(t)}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Mode Toggle */}
-      <button
-        onClick={() => setMode(mode === "dark" ? "light" : "dark")}
-        className="p-2 rounded-lg bg-surface text-text hover:bg-card transition-colors border border-border hover:text-primary"
-        aria-label="Toggle Dark Mode"
-      >
-        {mode === "dark" ? (
-          <Moon className="w-4 h-4" />
-        ) : (
-          <Sun className="w-4 h-4" />
-        )}
-      </button>
+      {(variant === "full" || variant === "mode-only") && (
+        <button
+          onClick={() => setMode(mode === "dark" ? "light" : "dark")}
+          className={`flex items-center justify-center rounded-lg bg-surface text-text hover:bg-card transition-colors border border-border hover:text-primary ${sizeClasses[buttonSize]}`}
+          aria-label="Toggle Dark Mode"
+        >
+          {mode === "dark" ? (
+            <Moon className="w-4 h-4" />
+          ) : (
+            <Sun className="w-4 h-4" />
+          )}
+        </button>
+      )}
     </div>
   );
 }

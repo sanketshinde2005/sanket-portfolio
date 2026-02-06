@@ -240,7 +240,7 @@ export default function HomePage() {
                 src="/me.jpeg"
                 alt="Sanket Shinde"
                 fill
-                className="rounded-full object-cover border-4 border-primary/30 shadow-xl hover:scale-105 transition-transform duration-300 pointer-events-auto"
+                className="rounded-full object-cover object-[50%_10%] border-4 border-primary/30 shadow-xl hover:scale-105 transition-transform duration-300 pointer-events-auto"
                 priority
                 sizes="(max-width: 640px) 128px, 160px"
               />

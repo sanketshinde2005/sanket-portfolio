@@ -102,10 +102,10 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-bg/95 backdrop-blur-md shadow-sm border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 sm:h-20">
-          {/* Logo */}
-          <div className="flex-shrink-0 flex items-center xl:flex-1 min-w-fit">
+      <div className="max-w-[1440px] mx-auto px-2 sm:px-4">
+        <div className="flex items-center justify-between h-16 sm:h-20">
+          {/* Zone 1: Logo (Left) */}
+          <div className="flex-1 flex items-center justify-start z-10">
             <a
               href="#home"
               className="flex items-center gap-2 sm:gap-3 group whitespace-nowrap"
@@ -117,47 +117,46 @@ export default function Navbar() {
               <div className="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary font-bold text-lg border border-primary/20 transition-transform group-hover:scale-110">
                 SS
               </div>
-              <span className="text-sm font-medium text-text tracking-wide group-hover:text-primary transition-colors whitespace-nowrap">
+              <span className="text-sm font-medium text-text tracking-wide group-hover:text-primary transition-colors whitespace-nowrap hidden min-[400px]:inline">
                 Sanket Shinde
               </span>
             </a>
           </div>
 
-          {/* Desktop Navigation - Centered */}
-          <div className="hidden xl:flex items-center justify-center px-4">
+          {/* Zone 2: Desktop Navigation (Absolute Center relative to Screen/Nav) */}
+          <div className="hidden xl:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center">
             <div className="flex items-center gap-1 sm:gap-2">
-              {navigation.map((item) => {
-                const Icon = item.icon;
-                const isActive = activeSection === item.id;
-                return (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    target={item.external ? "_blank" : undefined}
-                    rel={item.external ? "noopener noreferrer" : undefined}
-                    className={`flex items-center gap-2 px-3 py-2 rounded-full text-sm transition-all duration-300 ${
-                      isActive
-                        ? "text-primary bg-primary/15 font-bold shadow-sm ring-1 ring-primary/20"
-                        : "text-muted font-medium hover:text-primary hover:bg-primary/5"
-                    }`}
-                    onClick={(e) => {
-                      if (!item.external) {
+              {navigation
+                .filter((item) => !item.external) // Remove resume from desktop center links
+                .map((item) => {
+                  const Icon = item.icon;
+                  const isActive = activeSection === item.id;
+                  return (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className={`flex items-center gap-2 px-3 py-2 rounded-full text-sm transition-all duration-300 ${
+                        isActive
+                          ? "text-primary bg-primary/15 font-bold shadow-sm ring-1 ring-primary/20"
+                          : "text-muted font-medium hover:text-primary hover:bg-primary/5"
+                      }`}
+                      onClick={(e) => {
                         e.preventDefault();
                         handleLinkClick(item.href);
-                      }
-                    }}
-                  >
-                    <Icon className={`w-4 h-4 ${isActive ? "text-primary" : "text-muted group-hover:text-primary"}`} />
-                    <span>{item.name}</span>
-                  </a>
-                );
-              })}
+                      }}
+                    >
+                      <Icon className={`w-4 h-4 ${isActive ? "text-primary" : "text-muted group-hover:text-primary"}`} />
+                      <span>{item.name}</span>
+                    </a>
+                  );
+                })}
             </div>
           </div>
 
-          <div className="flex-shrink-0 flex items-center gap-4 xl:flex-1 xl:justify-end min-w-fit">
-            <div className="hidden lg:block">
-              <ThemeController />
+          {/* Zone 3: Actions (Right) */}
+          <div className="flex items-center z-10 ml-auto mr-20">
+            <div className="hidden lg:flex items-center">
+              <ThemeController variant="mode-only" buttonSize="md" />
             </div>
 
             {/* Mobile Menu Button */}
@@ -180,7 +179,7 @@ export default function Navbar() {
         {/* Mobile Navigation Menu */}
         {isOpen && (
           <div className="xl:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-surface border-t border-border rounded-b-xl shadow-xl max-h-[80vh] overflow-y-auto">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-surface border-t border-border rounded-b-xl shadow-xl max-h-[80vh] overflow-y-auto animate-fade-in-up">
               {navigation.map((item) => {
                 const Icon = item.icon;
                 const isActive = activeSection === item.id;
@@ -194,6 +193,8 @@ export default function Navbar() {
                       if (!item.external) {
                         e.preventDefault();
                         handleLinkClick(item.href);
+                      } else {
+                        setIsOpen(false);
                       }
                     }}
                     className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
@@ -209,7 +210,7 @@ export default function Navbar() {
               })}
               <div className="pt-4 mt-4 border-t border-border">
                 <div className="flex justify-center">
-                  <ThemeController />
+                  <ThemeController variant="full" />
                 </div>
               </div>
             </div>
