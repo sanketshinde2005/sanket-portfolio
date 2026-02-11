@@ -92,5 +92,6 @@ src/
 </p>
 
 ---
+<img width="2559" height="1235" alt="image" src="https://github.com/user-attachments/assets/11a67c66-d27c-4e78-8ad5-586b17650958" />
 
 Built with passion and ❤️ by **Sanket Shinde**. Feel free to explore, fork, and use!
