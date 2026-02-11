@@ -375,11 +375,22 @@ export default function HomePage() {
                       <Calendar className="w-4 h-4" /> 2023 - Present
                     </span>
                   </div>
-                  <div className="mt-6 inline-flex items-center gap-2 bg-secondary/10 px-4 py-2 rounded-lg border border-secondary/20">
-                    <Award className="w-5 h-5 text-secondary" />
-                    <span className="text-text font-medium">
-                      CGPA: <strong className="text-secondary">9.72</strong>
-                    </span>
+                  <div className="flex flex-wrap items-center gap-4 mt-6">
+                    <div className="inline-flex items-center gap-2 bg-secondary/10 px-4 py-2 rounded-lg border border-secondary/20">
+                      <Award className="w-5 h-5 text-secondary" />
+                      <span className="text-text font-medium">
+                        CGPA: <strong className="text-secondary">9.75</strong>
+                      </span>
+                    </div>
+                    <a
+                      href="https://drive.google.com/file/d/1paYFhfaJjlXkFQsGFSDE12lBAPcSLSjX/view?usp=drivesdk"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-lg border border-primary/20 hover:bg-primary/20 transition-all duration-300 group/btn"
+                    >
+                      <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                      <span className="font-medium text-sm">View Result</span>
+                    </a>
                   </div>
                 </div>
 
