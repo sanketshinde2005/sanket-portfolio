@@ -49,6 +49,30 @@ export default function HomePage() {
       image: "/projects/skillswap.png",
     },
     {
+      title: "ScholarCopilot",
+      description:
+        "A full-stack AI-powered research assistant that enables users to upload academic papers and interact with them using natural language. Built on a production-grade RAG pipeline, it supports semantic search, contextual Q&A, and multi-paper comparison for researchers, students, and analysts.",
+      techStack: [
+        "Angular",
+        "TypeScript",
+        "FastAPI",
+        "Python",
+        "LangChain",
+        "FAISS",
+      ],
+      features: [
+        "RAG-based contextual Q&A grounded in source text",
+        "Multi-paper comparison across methodology, results & limitations",
+        "Semantic search with FAISS vector similarity (<10ms)",
+        "Dual AI mode — local Ollama or cloud OpenAI inference",
+        "Google OAuth + JWT auth with per-user data isolation",
+      ],
+      githubUrl: "https://github.com/sanketshinde2005/ScholarCopilot",
+      liveUrl: "",
+      color: "indigo",
+      image: "/projects/scholarcopilot.png",
+    },
+    {
       title: "NexJob",
       description:
         "A modern job portal platform that streamlines the hiring process for both job seekers and employers, featuring AI-powered job matching and comprehensive applicant tracking.",
